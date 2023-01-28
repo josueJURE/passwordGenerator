@@ -12,8 +12,11 @@ console.log(symbols)
 
 button.addEventListener("click", generatePassword);
 
+
 function generatePassword() {
-    console.log("josué");
+    let length = prompt("enter password length");
+    passwordLength(length); 
+ 
 }
 
 
@@ -23,5 +26,12 @@ function filterOutNonDigits(val) {
 
 function filterOutDigits(val) {
     return !Number(val)
+}
 
+
+function passwordLength(dummyLength) {
+    if(dummyLength < 10) {
+        alert("password must be at least 10 characters long");
+        return
+    }
 }
