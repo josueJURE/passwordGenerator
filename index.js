@@ -5,7 +5,9 @@ const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
 const symbolsNumbers = [...Array(31)].map((_, i) => String.fromCharCode( i + 33));
 const numbers = symbolsNumbers.filter(filterOutNonDigits); // digit zero is missing
 const symbols = symbolsNumbers.filter(filterOutDigits); // digit zero not filtered out
-console.log(symbols)
+const charactersPickedByUsers = [];
+const arrayPickedByUser = [];
+
 
 
 
@@ -16,6 +18,19 @@ button.addEventListener("click", generatePassword);
 function generatePassword() {
     let length = prompt("enter password length");
     passwordLength(length); 
+    if(confirm("do you want at least one lower case character")) {
+        processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+    }
+    if(confirm("do you want at least one upper case character")) {
+        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+    }
+    if(confirm("do you want at least one number")) {
+        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+    }
+    if(confirm("do you want at least one symbol")) {
+        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser)
+    }
+    console.log(charactersPickedByUsers, arrayPickedByUser)
  
 }
 
@@ -34,4 +49,11 @@ function passwordLength(dummyLength) {
         alert("password must be at least 10 characters long");
         return
     }
+}
+
+function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByUser) {
+    const randomIndex = Math.floor(Math.random() * arrayUsed.length);
+    charactersPickedByUsers.push(arrayUsed[randomIndex]);
+    arrayPickedByUser.push(...arrayUsed)
+
 }
