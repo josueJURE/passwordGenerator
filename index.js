@@ -5,8 +5,9 @@ const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
 const symbolsNumbers = [...Array(31)].map((_, i) => String.fromCharCode( i + 33));
 const numbers = symbolsNumbers.filter(filterOutNonDigits); // digit zero is missing
 const symbols = symbolsNumbers.filter(filterOutDigits); // digit zero not filtered out
-const charactersPickedByUsers = [];
-const arrayPickedByUser = [];
+let charactersPickedByUsers = [];
+let arrayPickedByUser = [];
+let password = "";
 
 
 
@@ -30,9 +31,20 @@ function generatePassword() {
     if(confirm("do you want at least one symbol")) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser)
     }
-    console.log(charactersPickedByUsers, arrayPickedByUser)
+    let password = charactersPickedByUsers.join("");
+    console.log(password)
+    // removing duplicates 
+    arrayPickedByUser = arrayPickedByUser.filter(function(val) {
+        return charactersPickedByUsers.indexOf(val) == -1;
+    })
+
+    console.log(arrayPickedByUser)
+    console.log(charactersPickedByUsers)
  
 }
+
+// remove duplicates
+
 
 
 function filterOutNonDigits(val) {
