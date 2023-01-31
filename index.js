@@ -38,12 +38,23 @@ function generatePassword() {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
 
+    let secondPartPassword = restOfPassword(length-password.length, arrayPickedByUser)
+
     console.log(arrayPickedByUser)
     console.log(charactersPickedByUsers)
+    console.log(secondPartPassword, secondPartPassword.length)
  
 }
 
-// remove duplicates
+function restOfPassword(dummyLength, arrayPickedByUser) {
+    let result = "";
+    for(var i = 0; i < dummyLength; i++) {
+        let randomIndex = Math.floor(Math.random() * arrayPickedByUser.length);
+        result += arrayPickedByUser[randomIndex];
+    }
+    return result
+
+}
 
 
 
