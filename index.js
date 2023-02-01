@@ -38,12 +38,29 @@ function generatePassword() {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
 
-    let secondPartPassword = restOfPassword(length-password.length, arrayPickedByUser)
+    let secondPartPassword = restOfPassword(length-password.length, arrayPickedByUser);
+    password += secondPartPassword;
+    let shuffledPassword = shuffleArray(Array.from(password));
+    // let finalPassword = shuffledPassword.toString();
+
+
+    displayPassword.innerHTML = shuffledPassword.join("")
+
 
     console.log(arrayPickedByUser)
     console.log(charactersPickedByUsers)
     console.log(secondPartPassword, secondPartPassword.length)
  
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array
 }
 
 function restOfPassword(dummyLength, arrayPickedByUser) {
@@ -55,6 +72,8 @@ function restOfPassword(dummyLength, arrayPickedByUser) {
     return result
 
 }
+
+
 
 
 
