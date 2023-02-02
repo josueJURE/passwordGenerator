@@ -46,8 +46,10 @@ function generatePassword() {
     let shuffledPassword = shuffleArray(Array.from(password));
     // let finalPassword = shuffledPassword.toString();
 
-
-    displayPassword.innerHTML = shuffledPassword.join("")
+    displayPassword.innerHTML = shuffledPassword.join("");
+    console.log(howManyTimesUserClickedConfirm.length)
+    passwordStrength.innerHTML = userPasswordStrength(howManyTimesUserClickedConfirm.length)
+    howManyTimesUserClickedConfirm = [];
 
     console.log(howManyTimesUserClickedConfirm)
 
@@ -72,7 +74,6 @@ function restOfPassword(dummyLength, arrayPickedByUser) {
         result += arrayPickedByUser[randomIndex];
     }
     return result
-
 }
 
 
@@ -98,7 +99,22 @@ function passwordLength(dummyLength) {
 function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByUser, howManyTimesUserClickedConfirm) {
     const randomIndex = Math.floor(Math.random() * arrayUsed.length);
     charactersPickedByUsers.push(arrayUsed[randomIndex]);
-    arrayPickedByUser.push(...arrayUsed)
-    howManyTimesUserClickedConfirm.push(true)
+    arrayPickedByUser.push(...arrayUsed);
+    howManyTimesUserClickedConfirm.push(true);
+    howManyTimesUserClickedConfirm = [];
+}
 
+function userPasswordStrength(dummyLength) {
+    if(dummyLength === 1) {
+        return "very weak password"
+    }
+    if(dummyLength === 2) {
+        return "weak password"
+    }
+    if(dummyLength === 3) {
+        return "fairly strong"
+    }
+    else {
+        return "strong password"
+    }
 }
