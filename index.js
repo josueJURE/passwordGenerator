@@ -1,5 +1,7 @@
 const button = document.getElementById('button');
 const displayPassword = document.getElementById('displayPassword');
+const passwordStrength = document.getElementById('passwordStrength');
+console.log(passwordStrength)
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
 const symbolsNumbers = [...Array(31)].map((_, i) => String.fromCharCode( i + 33));
@@ -7,6 +9,7 @@ const numbers = symbolsNumbers.filter(filterOutNonDigits); // digit zero is miss
 const symbols = symbolsNumbers.filter(filterOutDigits); // digit zero not filtered out
 let charactersPickedByUsers = [];
 let arrayPickedByUser = [];
+let howManyTimesUserClickedConfirm = [];
 let password = "";
 
 
@@ -20,16 +23,16 @@ function generatePassword() {
     let length = prompt("enter password length");
     passwordLength(length); 
     if(confirm("do you want at least one lower case character")) {
-        processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser, howManyTimesUserClickedConfirm);
     }
     if(confirm("do you want at least one upper case character")) {
-        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser, howManyTimesUserClickedConfirm);
     }
     if(confirm("do you want at least one number")) {
-        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser, howManyTimesUserClickedConfirm);
     }
     if(confirm("do you want at least one symbol")) {
-        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser)
+        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser, howManyTimesUserClickedConfirm);
     }
     let password = charactersPickedByUsers.join("");
     console.log(password)
@@ -46,11 +49,10 @@ function generatePassword() {
 
     displayPassword.innerHTML = shuffledPassword.join("")
 
+    console.log(howManyTimesUserClickedConfirm)
 
-    console.log(arrayPickedByUser)
-    console.log(charactersPickedByUsers)
-    console.log(secondPartPassword, secondPartPassword.length)
- 
+
+
 }
 
 function shuffleArray(array) {
@@ -93,9 +95,10 @@ function passwordLength(dummyLength) {
     }
 }
 
-function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByUser) {
+function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByUser, howManyTimesUserClickedConfirm) {
     const randomIndex = Math.floor(Math.random() * arrayUsed.length);
     charactersPickedByUsers.push(arrayUsed[randomIndex]);
     arrayPickedByUser.push(...arrayUsed)
+    howManyTimesUserClickedConfirm.push(true)
 
 }
