@@ -10,3 +10,9 @@
     justify-content: center;
     align-items: center;
 }
+
+#passwordStrength {
+    height: 10px;
+    width: 800px;
+    background-color: lightgrey;
+}
