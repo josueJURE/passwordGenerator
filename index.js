@@ -1,12 +1,14 @@
 const button = document.getElementById('button');
 const displayPassword = document.getElementById('displayPassword');
 const passwordStrength = document.getElementById('passwordStrength');
-console.log(passwordStrength)
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
 const symbolsNumbers = [...Array(31)].map((_, i) => String.fromCharCode( i + 33));
-const numbers = symbolsNumbers.filter(filterOutNonDigits); // digit zero is missing
-const symbols = symbolsNumbers.filter(filterOutDigits); // digit zero not filtered out
+const numbers = Array.from(Array(10).keys());
+const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
+
+// const numbers = symbolsNumbers.filter(filterOutNonDigits); 
+// const symbols = symbolsNumbers.filter(filterOutDigits); 
 let charactersPickedByUsers = [];
 let arrayPickedByUser = [];
 let lengthPassword;
@@ -82,19 +84,6 @@ function restOfPassword(dummyLength, arrayPickedByUser) {
     }
     return result
 }
-
-
-
-
-
-function filterOutNonDigits(val) {
-    return Number(val)
-}
-
-function filterOutDigits(val) {
-    return !Number(val)
-}
-
 
 function passwordLength(dummyLength) {
     if(dummyLength < 10) {
