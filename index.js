@@ -22,21 +22,24 @@ let firstPartpassword = "";
 button.addEventListener("click", generatePassword);
 
 
-function generatePassword(e) {
+function generatePassword() {
     let length = prompt("enter password length");
     passwordLength(length); 
     if(confirm("do you want at least one lower case character")) {
-        console.log(e)
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar(passwordStrength, 25)
     }
     if(confirm("do you want at least one upper case character")) {
         processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar(passwordStrength, 25)
     }
     if(confirm("do you want at least one number")) {
         processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar(passwordStrength, 25)
     }
     if(confirm("do you want at least one symbol")) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar(passwordStrength, 25)
     }
     firstPartpassword = charactersPickedByUsers.join("");
     console.log(firstPartpassword)
@@ -96,9 +99,14 @@ function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByU
     const randomIndex = Math.floor(Math.random() * arrayUsed.length);
     charactersPickedByUsers.push(arrayUsed[randomIndex]);
     arrayPickedByUser.push(...arrayUsed);
+}
 
+function updateProgressBar(myProgressBar, value) {
+    myProgressBar.querySelector("#myBar").style.width = `${value}%`
 
 }
+
+// progressBar.querySelector(".progress__fill").style.width = `${value}%`;
 
 function userPasswordStrength(dummyLength) {
     if(dummyLength === 1) {
