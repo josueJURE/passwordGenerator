@@ -1,4 +1,7 @@
 const button = document.getElementById('button');
+const progressBar = document.querySelector('#progressBar');
+console.log(progressBar)
+
 const displayPassword = document.getElementById('displayPassword');
 const passwordStrength = document.getElementById('passwordStrength');
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
@@ -27,19 +30,19 @@ function generatePassword() {
     passwordLength(length); 
     if(confirm("do you want at least one lower case character")) {
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar(passwordStrength, 25)
+        updateProgressBar();
     }
     if(confirm("do you want at least one upper case character")) {
         processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar(passwordStrength, 25)
+        updateProgressBar();
     }
     if(confirm("do you want at least one number")) {
         processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar(passwordStrength, 25)
+            updateProgressBar()
     }
     if(confirm("do you want at least one symbol")) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar(passwordStrength, 25)
+            updateProgressBar()
     }
     firstPartpassword = charactersPickedByUsers.join("");
     console.log(firstPartpassword)
@@ -60,10 +63,10 @@ function generatePassword() {
     // let finalPassword = shuffledPassword.toString();
 
     displayPassword.innerHTML = shuffledPassword.join("");
-    passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
+    displayPassword.innerHTML = userPasswordStrength(lengthPassword)
     
 
-    console.log()
+   
 
 
 
@@ -101,10 +104,14 @@ function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByU
     arrayPickedByUser.push(...arrayUsed);
 }
 
-function updateProgressBar(myProgressBar, value) {
-    myProgressBar.querySelector("#myBar").style.width = `${value}%`
 
-}
+
+function updateProgressBar() {
+    var value1 = progressBar.value
+    progressBar.value = value1 + 25
+  }
+
+
 
 // progressBar.querySelector(".progress__fill").style.width = `${value}%`;
 
@@ -122,3 +129,4 @@ function userPasswordStrength(dummyLength) {
         return "strong password"
     }
 }
+
