@@ -21,6 +21,12 @@ randomPassword.addEventListener("click", function() {
     passwordSection.classList.remove("displayNone");
 })
 
+goBack.addEventListener("click", function() {
+    randomPassword.classList.toggle("remove")
+    createPassword.classList.toggle("remove");
+    passwordSection.classList.toggle("displayNone")
+})
+
 
 
 // const button = document.getElementById('button');
