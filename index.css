@@ -7,6 +7,7 @@
   padding: 20px;
 }
 
+
 button {
   width: 100%;
   padding: 12px;
@@ -17,6 +18,23 @@ button {
 .remove {
   display: none;
 }
+
+.displayNone {
+  display: none;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+
+
+
+
+
 
 button:hover { 
   scale: 1.1;

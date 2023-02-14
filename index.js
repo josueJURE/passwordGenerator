@@ -1,18 +1,27 @@
 const createPassword = document.querySelector(`#createPassword`);
 const randomPassword = document.querySelector(`#randomPassword`);
+const passwordSection = document.querySelector(`.passwordSection`);
+const goBack = document.querySelector(`#goBack`);
+
+
+console.log(passwordSection)
 
 createPassword.addEventListener("click", function(){
     console.log("create password");
     createPassword.classList.add("remove");
-    randomPassword.classList.add("remove")
+    randomPassword.classList.add("remove");
+    passwordSection.classList.remove("displayNone");
+    
 })
 
 randomPassword.addEventListener("click", function() {
     console.log("random password");
     randomPassword.classList.add("remove")
     createPassword.classList.add("remove");
-    
+    passwordSection.classList.remove("displayNone");
 })
+
+
 
 // const button = document.getElementById('button');
 // const progressBar = document.querySelector('#progressBar');
