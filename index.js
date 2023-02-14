@@ -1,3 +1,6 @@
+
+
+
 const button = document.getElementById('button');
 const progressBar = document.querySelector('#progressBar');
 console.log(progressBar)
