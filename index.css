@@ -3,17 +3,18 @@
 }
 
 .container {
-  background-color: #f1f1f1;
-  padding: 20px;
-}
+  background-color: aliceblue;
 
+}
 
 button {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
   border-radius: 4px;
 }
+
+
 
 .remove {
   display: none;
