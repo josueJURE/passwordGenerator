@@ -1,5 +1,5 @@
-const createPassword = document.querySelector(`#createPassword`);
-const randomPassword = document.querySelector(`#randomPassword`);
+const createPasswordButton = document.querySelector(`#createPasswordButton`);
+const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
 const randomPasswordSection = document.querySelector(`.randomPasswordSection`);
 
@@ -7,15 +7,15 @@ const goBack = document.querySelector(`#goBack`);
 
 
 
-createPassword.addEventListener("click", function() {
-    createPassword.classList.add("remove");
-    randomPassword.classList.add("remove");
+createPasswordButton.addEventListener("click", function() {
+    createPasswordButton.classList.add("remove");
+    randomPasswordButton.classList.add("remove");
     createPasswordSection.classList.remove("displayNone");
 })
 
-randomPassword.addEventListener("click", function() {
-    createPassword.classList.add("remove");
-    randomPassword.classList.add("remove");
+randomPasswordButton.addEventListener("click", function() {
+    createPasswordButton.classList.add("remove");
+    randomPasswordButton.classList.add("remove");
     randomPasswordSection.classList.remove("displayNone");
 })
 

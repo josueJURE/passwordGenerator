@@ -2,13 +2,31 @@
     box-sizing: border-box;
 }
 
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .container {
   background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.superContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
 button {
-  width: 100%;
+  width: 50%;
   padding: 16px;
   margin-bottom: 12px;
   border-radius: 4px;
