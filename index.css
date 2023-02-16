@@ -8,7 +8,8 @@
   align-items: center;
 } */
 
-.container {
+.buttonSection,
+.createPasswordSection {
   background-color: aliceblue;
   display: flex;
   justify-content: center;
@@ -16,7 +17,9 @@
   flex-direction: column;
 }
 
-.superContainer {
+.buttonContainer,
+.createPasswordSection
+ {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -25,7 +28,11 @@
 
 }
 
-button {
+
+
+button, 
+input 
+ {
   width: 50%;
   padding: 16px;
   margin-bottom: 12px;
@@ -42,12 +49,6 @@ button {
   display: none;
 }
 
-input {
-  width: 100%;
-  margin-bottom: 16px;
-  border-radius: 4px;
-  padding: 12px;
-}
 
 
 
