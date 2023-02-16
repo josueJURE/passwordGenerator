@@ -1,10 +1,11 @@
 const buttonContainer = document.querySelector(`.buttonContainer`);
+const createPasswordSection = document.querySelector(`.createPasswordSection`);
+const generatePasswordSection = document.querySelector(`.generatePasswordSection`);
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
-const createPasswordSection = document.querySelector(`.createPasswordSection`);
-const randomPasswordSection = document.querySelector(`.randomPasswordSection`);
-
-const goBack = document.querySelector(`#goBack`);
+const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
+const goBack1 = document.querySelector(`#goBack1`);
+const goBack2 = document.querySelector(`#goBack2`);
 
 
 
@@ -16,23 +17,21 @@ createPasswordButton.addEventListener("click", function() {
 })
 
 randomPasswordButton.addEventListener("click", function() {
-    createPasswordSection.classList.remove("displayNone");
+    generatePasswordSection.classList.remove("displayNone");
     buttonContainer.classList.add("remove");
     // randomPasswordButton.classList.add("remove");
-   
 })
 
-goBack.addEventListener("click", goBackToPrevious)
+goBack1.addEventListener("click", goBackToPrevious)
+goBack2.addEventListener("click", goBackToPrevious)
 
 function removeElements() {
  
 }
 
 function goBackToPrevious() {
-    randomPassword.classList.toggle("remove")
-    createPassword.classList.toggle("remove");
-    passwordSection.classList.toggle("displayNone")
-
+    createPasswordSection.classList.toggle("remove");
+    buttonContainer.classList.toggle("remove");
 }
 
 
