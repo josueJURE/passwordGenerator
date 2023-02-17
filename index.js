@@ -75,9 +75,9 @@ function generatePassword() {
     //         updateProgressBar()
     // }
     firstPartpassword = charactersPickedByUsers.join("");
-    console.log(firstPartpassword)
+    goBack2.classList.add("remove");
+    generatePasswordButton.classList.add('remove');
 
- 
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
