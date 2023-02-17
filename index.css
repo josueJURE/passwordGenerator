@@ -59,22 +59,24 @@ input
   display: none;
 }
 
-
-
-
-
-
-
+progress {
+  width: 50%;
+}
 
 button:hover { 
   scale: 1.1;
 
 }
 
-#passwordStrength {
-    height: 10px;
-    width: 800px;
+#passwordStrength,
+#displayPassword
+ {
+    width: 50%;
     background-color: lightgrey;
+    text-align: center;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 4px;
 }
 
 .myBar {
