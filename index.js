@@ -8,7 +8,9 @@ const goBack1 = document.querySelector(`#goBack1`);
 const goBack2 = document.querySelector(`#goBack2`);
 const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
-const passwordStrength = document.querySelector('#passwordStrength');
+const showPassword = document.querySelector(`.showPassword`);
+const progressText = document.querySelector(`.progressText`);
+console.log(progressText)
 // create arrays
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
@@ -62,21 +64,22 @@ function generatePassword() {
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
         updateProgressBar();
     }
-    // if(confirm("do you want at least one upper case character")) {
-    //     processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-    //     updateProgressBar();
-    // }
-    // if(confirm("do you want at least one number")) {
-    //     processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-    //         updateProgressBar()
-    // }
-    // if(confirm("do you want at least one symbol")) {
-    //     processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-    //         updateProgressBar()
-    // }
+    if(confirm("do you want at least one upper case character")) {
+        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar();
+    }
+    if(confirm("do you want at least one number")) {
+        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+            updateProgressBar()
+    }
+    if(confirm("do you want at least one symbol")) {
+        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+            updateProgressBar()
+    }
     firstPartpassword = charactersPickedByUsers.join("");
     goBack2.classList.add("remove");
     generatePasswordButton.classList.add('remove');
+    showPassword.classList.remove("displayNone");
 
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
@@ -94,7 +97,8 @@ function generatePassword() {
 
 
     displayPassword.innerHTML = shuffledPassword.join("");
-    passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
+    // passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
+    progressText.innerHTML = userPasswordStrength(lengthPassword);
     
 
    
