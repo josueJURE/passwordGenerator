@@ -1,8 +1,10 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    outline: none;
     font-family: 'Open Sans', sans-serif;
-   
-    
+    background-color: aliceblue;git
 }
 
 /* body {
@@ -15,7 +17,7 @@
 .generatePasswordSection,
 .createPasswordSection,
 .showPassword {
-  background-color: aliceblue;
+  
   display: flex;
   justify-content: center;
   align-items: center;
