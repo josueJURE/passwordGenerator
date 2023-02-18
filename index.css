@@ -4,20 +4,15 @@
     box-sizing: border-box;
     outline: none;
     font-family: 'Open Sans', sans-serif;
-    background-color: aliceblue;git
+    background-color: aliceblue;
 }
 
-/* body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+
 
 .buttonSection,
 .generatePasswordSection,
 .createPasswordSection,
 .showPassword {
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,18 +32,7 @@
 
 }
 
-/* label {
-    vertical-align: top;
-} */
-
-label {
-text-align: left;
-}
-
-
-
-button, 
-input 
+button
  {
   width: 16rem;
   height: 5rem;
@@ -74,6 +58,8 @@ input
 
 progress {
   width: 50%;
+  margin-bottom: 50px;
+
 }
 
 button:hover { 
@@ -82,19 +68,67 @@ button:hover {
 }
 
 #passwordStrength,
-#displayPassword
+#displayPasswordContainer
  {
-    width: 50%;
+    /* width: 50%;
     background-color: lightgrey;
     text-align: center;
     padding: 16px;
     margin-bottom: 12px;
+    border-radius: 4px; */
+    width: 50%;
+    height: 10px;
+    padding: 1rem 1rem 1rem 3rem;
+    background-color: #ddd;
+    border: none;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-group input {
+  
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    width: 28rem;
+    height: 1rem;
+    padding: 1rem 1rem 1rem 3rem;
+    background-color: #ddd;
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+#displayPasswordContainer, 
+.writePassword
+ {
+  position: relative;
+}
+
+#displayPassword {
+  background-color: #ddd;
+}
+
+i {
+  background-color: #ddd;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-80%);
+  font-size: 1.2rem;
+  color: #555;
 }
 
 .myBar {
     width: 0%;
     height: 100%;
     background-color: green;
+}
 
+input {
+  width: 100%;
 }

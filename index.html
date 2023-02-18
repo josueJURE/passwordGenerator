@@ -27,10 +27,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 
   <div class="passwordContainer">
     <div class="createPasswordSection displayNone">
-      <label for="password">password</label>
-      <input type="text" id="password">
-      <label for="confirmPassword">confirm password</label>
-      <input type="text" id="confirmPassword">
+    
+      <div class="writePassword input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" placeholder="enter password">
+      </div>
+      <div class="writePassword input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="confirmPassword" placeholder="confirm password">
+      </div>
+      
+      <!-- label below might have to be removed 18/2/23 -->
+     
       <button id="goBack1">changed your mind ?</button>
     </div>
     <div class="generatePasswordSection displayNone">
@@ -39,8 +47,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       <div class="displayNone showPassword">
         <label for="progressBar" class="progressText">password strength</label>
         <progress id="progressBar" value="0" max="100">0 </progress>
-        <label for="displayPassword">your password</label>
-        <div id="displayPassword"></div>
+
+        <div id="displayPasswordContainer">
+          <div id="displayPassword" placeholder="your password"></div>
+          <i class="fas fa-lock"></i>
+        </div>
+        
         <div id="level"></div>
         <button>reset</button>
       </div>
