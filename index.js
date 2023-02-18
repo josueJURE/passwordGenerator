@@ -10,7 +10,8 @@ const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
 const progressText = document.querySelector(`.progressText`);
-console.log(progressText)
+const level = document.querySelector(`#level`)
+console.log(level)
 // create arrays
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
@@ -64,18 +65,18 @@ function generatePassword() {
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
         updateProgressBar();
     }
-    if(confirm("do you want at least one upper case character")) {
-        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar();
-    }
-    if(confirm("do you want at least one number")) {
-        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-            updateProgressBar()
-    }
-    if(confirm("do you want at least one symbol")) {
-        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-            updateProgressBar()
-    }
+    // if(confirm("do you want at least one upper case character")) {
+    //     processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+    //     updateProgressBar();
+    // }
+    // if(confirm("do you want at least one number")) {
+    //     processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+    //         updateProgressBar()
+    // }
+    // if(confirm("do you want at least one symbol")) {
+    //     processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+    //         updateProgressBar()
+    // }
     firstPartpassword = charactersPickedByUsers.join("");
     goBack2.classList.add("remove");
     generatePasswordButton.classList.add('remove');
@@ -99,6 +100,7 @@ function generatePassword() {
     displayPassword.innerHTML = shuffledPassword.join("");
     // passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
     progressText.innerHTML = userPasswordStrength(lengthPassword);
+    level.innerHTML = `${progressBar.value}%`
     
 
    

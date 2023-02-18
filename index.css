@@ -1,5 +1,8 @@
 * {
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+   
+    
 }
 
 /* body {
@@ -45,10 +48,16 @@ text-align: left;
 button, 
 input 
  {
-  width: 50%;
-  padding: 16px;
-  margin-bottom: 12px;
-  border-radius: 4px;
+  width: 16rem;
+  height: 5rem;
+  background-color: #3aaf9f;
+  border: none;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  margin-top: 3rem;
+  cursor: pointer;
 }
 
 
