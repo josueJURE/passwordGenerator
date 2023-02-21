@@ -45,9 +45,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       <button id="generatePasswordButton">Generate Password</button>
       <button id="goBack2">changed your mind ?</button>
       <div class="displayNone showPassword">
-        <label for="progressBar" class="progressText">password strength</label>
-        <progress id="progressBar" value="0" max="100">0 </progress>
+ 
+    
 
+
+        <div class="timerContainer centerFlex">
+          <div class="circleContainer center">
+            <div id="progressBar" class="circle2 center">
+              <!-- <div class="timer center progressText">Ready</div> -->
+            </div>
+          </div>
+        </div>
         <div id="displayPasswordContainer">
           <div id="displayPassword" placeholder="your password"></div>
           <i class="fas fa-lock"></i>

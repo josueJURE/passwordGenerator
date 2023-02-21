@@ -4,9 +4,11 @@ const generatePasswordSection = document.querySelector(`.generatePasswordSection
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
+const circleContainer = document.querySelector(`.circleContainer`);
+console.log(circleContainer)
 const goBack1 = document.querySelector(`#goBack1`);
 const goBack2 = document.querySelector(`#goBack2`);
-const progressBar = document.querySelector('#progressBar');
+// const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
 const progressText = document.querySelector(`.progressText`);
@@ -81,6 +83,7 @@ function generatePassword() {
     goBack2.classList.add("remove");
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
+    circleContainer.style.background = `conic-gradient(green ${updateProgressBar()*90}deg, gray ${updateProgressBar()*90}deg)`;
 
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
@@ -99,8 +102,8 @@ function generatePassword() {
 
     displayPassword.innerHTML = shuffledPassword.join("");
     // passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
-    progressText.innerHTML = userPasswordStrength(lengthPassword);
-    level.innerHTML = `${progressBar.value}%`
+    // progressText.innerHTML = userPasswordStrength(lengthPassword);
+    level.innerHTML = `${updateProgressBar()*25}%`
     
 
    
@@ -143,9 +146,15 @@ function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByU
 
 
 
-function updateProgressBar() {
-    var value1 = progressBar.value
-    progressBar.value = value1 + 25
+// function updateProgressBar() {
+//     var value1 = progressBar.value
+//     progressBar.value = value1 + 25
+//   }
+
+  const updateProgressBar = () => {
+    var value = 0;
+    value++
+    return value
   }
 
 
