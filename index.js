@@ -67,50 +67,55 @@ function generatePassword() {
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
         updateProgressBar();
     }
-    // if(confirm("do you want at least one upper case character")) {
-    //     processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-    //     updateProgressBar();
-    // }
-    // if(confirm("do you want at least one number")) {
-    //     processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-    //         updateProgressBar()
-    // }
-    // if(confirm("do you want at least one symbol")) {
-    //     processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-    //         updateProgressBar()
-    // }
+    if(confirm("do you want at least one upper case character")) {
+        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar();
+    }
+    if(confirm("do you want at least one number")) {
+        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+            updateProgressBar()
+    }
+    if(confirm("do you want at least one symbol")) {
+        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+            updateProgressBar()
+    }
     firstPartpassword = charactersPickedByUsers.join("");
+    console.log(firstPartpassword.length)
     goBack2.classList.add("remove");
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
-    circleContainer.style.background = `conic-gradient(green ${updateProgressBar()*90}deg, gray ${updateProgressBar()*90}deg)`;
+    circleContainer.style.background = `conic-gradient(green ${firstPartpassword.length*90}deg, gray ${firstPartpassword.length*90}deg)`;
 
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
 
+
     lengthPassword = firstPartpassword.length
-    console.log(lengthPassword)
-
-
-
+  
 
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
+    progressText.innerHTML = userPasswordStrength(lengthPassword);
+    // point where value of firstPassword.length changes
     firstPartpassword += secondPartPassword;
+    
     let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
 
 
     displayPassword.innerHTML = shuffledPassword.join("");
     // passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
     // progressText.innerHTML = userPasswordStrength(lengthPassword);
+
+    console.log(firstPartpassword.length)
    
-    progressText.innerHTML = `password strength ${updateProgressBar()*25}%`
+   
     
+  
 
-   
+}
 
-
-
+function circularProgressBar(progress) {
+    return `password strength ${progress*25}%`
 }
 
 function shuffleArray(array) {
@@ -164,16 +169,16 @@ function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByU
 
 function userPasswordStrength(dummyLength) {
     if(dummyLength === 1) {
-        return "very weak password"
+        return `password strength ${dummyLength*25}%`;
     }
     if(dummyLength === 2) {
-        return "weak password"
+        return `password strength ${dummyLength*25}%`;
     }
     if(dummyLength === 3) {
-        return "fairly strong"
+        return `password strength  ${dummyLength*25}%`;
     }
     else {
-        return "strong password"
+        return `password strength  ${dummyLength*25}%`;
     }
 }
 
