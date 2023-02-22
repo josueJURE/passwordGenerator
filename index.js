@@ -84,6 +84,7 @@ function generatePassword() {
     goBack2.classList.add("remove");
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
+    circleContainer.style.animationDuration = "1s"
     circleContainer.style.background = `conic-gradient(green ${firstPartpassword.length*90}deg, gray ${firstPartpassword.length*90}deg)`;
 
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
