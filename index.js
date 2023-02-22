@@ -103,7 +103,8 @@ function generatePassword() {
     displayPassword.innerHTML = shuffledPassword.join("");
     // passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
     // progressText.innerHTML = userPasswordStrength(lengthPassword);
-    level.innerHTML = `${updateProgressBar()*25}%`
+   
+    progressText.innerHTML = `password strength ${updateProgressBar()*25}%`
     
 
    

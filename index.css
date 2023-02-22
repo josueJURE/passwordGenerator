@@ -168,7 +168,10 @@ input {
   place-items: center;
 }
 
-.timer {
+.progressText {
+  text-align: center;
+  width: 95%;
+  background-color: #fff;
 
 }
 
