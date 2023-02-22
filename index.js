@@ -5,9 +5,10 @@ const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
 const circleContainer = document.querySelector(`.circleContainer`);
-console.log(circleContainer)
 const goBack1 = document.querySelector(`#goBack1`);
 const goBack2 = document.querySelector(`#goBack2`);
+const checkbox = document.querySelector(`#checkbox`);
+const password = document.querySelector(`#password`)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
@@ -180,6 +181,16 @@ function userPasswordStrength(dummyLength) {
     }
     else {
         return `password strength  ${dummyLength*25}%`;
+    }
+}
+
+checkbox.addEventListener("change", switchPasswordType)
+
+function switchPasswordType() {
+    if(checkbox.checked) {
+        password.type = "input"
+    } else {
+        password.type = "password"
     }
 }
 
