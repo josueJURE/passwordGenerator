@@ -7,6 +7,23 @@
     background-color: aliceblue;
 }
 
+.checkbox {
+  width: 15px;
+  height: 15px;
+}
+
+.enterValue {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.row {
+  gap: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center
+}
+
 
 
 .buttonSection,
