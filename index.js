@@ -7,8 +7,8 @@ const generatePasswordButton = document.querySelector(`#generatePasswordButton`)
 const circleContainer = document.querySelector(`.circleContainer`);
 const goBack1 = document.querySelector(`#goBack1`);
 const goBack2 = document.querySelector(`#goBack2`);
-const checkbox = document.querySelectorAll(`.checkbox`);
-console.log(checkbox)
+const checkboxPassword = document.querySelector(`.checkboxPassword`);
+const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword")
 const password = document.querySelector(`#password`)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
@@ -38,11 +38,10 @@ createPasswordButton.addEventListener("click", function() {
     buttonContainer.classList.add("remove");
 })
 
-for(var i = 0; i < checkbox.length; i++) {
-    checkbox[i].addEventListener("change", switchPasswordType);
-}
 
-// checkbox.addEventListener("change", switchPasswordType)
+
+checkboxPassword.addEventListener("change", switchPasswordType);
+checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 
 randomPasswordButton.addEventListener("click", function() {
     generatePasswordSection.classList.remove("displayNone");
@@ -191,11 +190,12 @@ function userPasswordStrength(dummyLength) {
 
 
 
-function switchPasswordType() {
-    if(checkbox.checked) {
-        password.type = "input"
+function switchPasswordType(e) {
+    let element =  e.target.parentElement.previousElementSibling.lastElementChild
+    if(e.target.checked) {
+       element.type = "input";
     } else {
-        password.type = "password"
+        element.type = "password"
     }
 }
 

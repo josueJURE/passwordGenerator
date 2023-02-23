@@ -7,7 +7,9 @@
     background-color: aliceblue;
 }
 
-.checkbox {
+.checkboxPassword,
+.checkboxConfirmPassword
+ {
   width: 15px;
   height: 15px;
 }
