@@ -12,13 +12,15 @@ const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword
 const password = document.querySelector(`#password`);
 const confirmPassword = document.querySelector(`#confirmPassword`);
 const doesPasswordsmatch = document.querySelector(`.doesPasswordsmatch`);
-console.log(doesPasswordsmatch)
+const reset = document.querySelector(`.reset`)
+const reset2 = document.querySelector(`.reset2`);
+console.log(reset)
 console.log(password.value)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
 const progressText = document.querySelector(`.progressText`);
-const level = document.querySelector(`#level`)
+const level = document.querySelector(`#level`);
 console.log(level)
 // create arrays
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
@@ -42,6 +44,12 @@ createPasswordButton.addEventListener("click", function() {
     buttonContainer.classList.add("remove");
   
 });
+
+
+reset2.addEventListener("click", function() {
+    generatePasswordSection.classList.toggle("displayNone");
+    buttonContainer.classList.toggle("remove");
+})
 
 confirmPassword.addEventListener("keyup", function() {
     if(confirmPassword.value === password.value) {
