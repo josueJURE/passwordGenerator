@@ -8,8 +8,12 @@ const circleContainer = document.querySelector(`.circleContainer`);
 const goBack1 = document.querySelector(`#goBack1`);
 const goBack2 = document.querySelector(`#goBack2`);
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
-const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword")
-const password = document.querySelector(`#password`)
+const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
+const password = document.querySelector(`#password`);
+const confirmPassword = document.querySelector(`#confirmPassword`);
+const doesPasswordsmatch = document.querySelector(`.doesPasswordsmatch`);
+console.log(doesPasswordsmatch)
+console.log(password.value)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
@@ -36,10 +40,31 @@ let firstPartpassword = "";
 createPasswordButton.addEventListener("click", function() {
     createPasswordSection.classList.remove("displayNone");
     buttonContainer.classList.add("remove");
+  
+});
+
+confirmPassword.addEventListener("keyup", function() {
+    if(confirmPassword.value === password.value) {
+        doesPasswordsmatch.classList.remove("displayNone");
+        doesPasswordsmatch.style.color = "green"
+        doesPasswordsmatch.innerHTML = "match";
+    }
+    else {
+        // doesPasswordsmatch.classList.toggle("displayNone")
+        // doesPasswordsmatch.classList.add("displayNone");
+        doesPasswordsmatch.innerHTML = "don't match";
+        doesPasswordsmatch.style.color = "red"
+      
+    }
 })
 
 
+console.log(password.value)
+console.log(confirmPassword.value)
 
+
+// if I give both elements the same class name say "dummy" can I create an Eventlistner
+// using NodeList
 checkboxPassword.addEventListener("change", switchPasswordType);
 checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 
