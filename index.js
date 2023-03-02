@@ -5,7 +5,7 @@ const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
 const circleContainer = document.querySelector(`.circleContainer`);
-const goBack1 = document.querySelector(`#goBack1`);
+// const goBack1 = document.querySelector(`#goBack1`);
 const goBack2 = document.querySelector(`#goBack2`);
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
@@ -37,19 +37,27 @@ let firstPartpassword = "";
 
 
 
-
+// use form and checkbox 1/03/23
 
 createPasswordButton.addEventListener("click", function() {
     createPasswordSection.classList.remove("displayNone");
     buttonContainer.classList.add("remove");
-  
 });
 
 
-reset2.addEventListener("click", function() {
-    generatePasswordSection.classList.toggle("displayNone");
-    buttonContainer.classList.toggle("remove");
+reset.addEventListener("click", function() {
+    createPasswordSection.classList.toggle("displayNone");
+    console.log(buttonContainer.classList)
+    buttonContainer.classList.remove("remove");
+    console.log(buttonContainer.classList)
+    console.log("josue")
 })
+
+
+
+
+
+
 
 confirmPassword.addEventListener("keyup", function() {
     if(confirmPassword.value === password.value) {
@@ -82,17 +90,11 @@ randomPasswordButton.addEventListener("click", function() {
     // randomPasswordButton.classList.add("remove");
 })
 
-goBack1.addEventListener("click", goBackToPrevious)
-goBack2.addEventListener("click", goBackToPrevious)
-
-function removeElements() {
- 
-}
-
-function goBackToPrevious() {
-    createPasswordSection.classList.toggle("remove");
+reset2.addEventListener("click", function() {
+    console.log("reset2 clicked")
+    generatePasswordSection.classList.toggle("displayNone");
     buttonContainer.classList.toggle("remove");
-}
+})
 
 
 generatePasswordButton.addEventListener("click", generatePassword);

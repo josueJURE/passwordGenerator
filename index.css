@@ -90,12 +90,6 @@ button:hover {
 #displayPasswordContainer,
 .writePassword
  {
-    /* width: 50%;
-    background-color: lightgrey;
-    text-align: center;
-    padding: 16px;
-    margin-bottom: 12px;
-    border-radius: 4px; */
     width: 50%;
     height: 10px;
     padding: 1rem 1rem 1rem 3rem;
