@@ -14,8 +14,8 @@ const confirmPassword = document.querySelector(`#confirmPassword`);
 const doesPasswordsmatch = document.querySelector(`.doesPasswordsmatch`);
 const reset = document.querySelector(`.reset`)
 const reset2 = document.querySelector(`.reset2`);
-console.log(reset)
-console.log(password.value)
+const form = document.querySelector(`.form`)
+console.log(form)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
@@ -51,6 +51,12 @@ reset.addEventListener("click", function() {
     buttonContainer.classList.remove("remove");
     console.log(buttonContainer.classList)
     console.log("josue")
+})
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    
 })
 
 
@@ -101,24 +107,25 @@ generatePasswordButton.addEventListener("click", generatePassword);
 
 
 function generatePassword() {
-    let length = prompt("enter password length");
-    passwordLength(length); 
-    if(confirm("do you want at least one lower case character")) {
-        processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar();
-    }
-    if(confirm("do you want at least one upper case character")) {
-        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar();
-    }
-    if(confirm("do you want at least one number")) {
-        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-            updateProgressBar()
-    }
-    if(confirm("do you want at least one symbol")) {
-        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-            updateProgressBar()
-    }
+
+    // let length = prompt("enter password length");
+    // passwordLength(length); 
+    // if(confirm("do you want at least one lower case character")) {
+    //     processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+    //     updateProgressBar();
+    // }
+    // if(confirm("do you want at least one upper case character")) {
+    //     processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+    //     updateProgressBar();
+    // }
+    // if(confirm("do you want at least one number")) {
+    //     processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+    //         updateProgressBar()
+    // }
+    // if(confirm("do you want at least one symbol")) {
+    //     processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+    //         updateProgressBar()
+    // }
     firstPartpassword = charactersPickedByUsers.join("");
     console.log(firstPartpassword.length)
     goBack2.classList.add("remove");

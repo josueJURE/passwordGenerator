@@ -18,6 +18,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     <title>Document</title>
 </head>
 <body>
+ 
   <div class="buttonContainer">
     <div class="buttonSection" >
       <button id="createPasswordButton">Create your own password</button>
@@ -25,6 +26,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     </div>
   </div>
 
+  <form action="" class="form">
   <div class="passwordContainer">
     <div class="createPasswordSection displayNone">
       <div class="enterValue">
@@ -56,6 +58,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
    
       
       <!-- label below might have to be removed 18/2/23 -->
+   
      
       <button class="reset" id="goBack1">GO BACK</button>
     </div>
@@ -63,11 +66,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       <button id="goBack2">changed your mind ?</button>
       <button id="generatePasswordButton">No Generate Random Password</button>
       
+      
       <div class="displayNone showPassword">
- 
-    
-
-
+        <div class="checkboxSection">
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword">
+            <div>do you want at least one small cap letter</div>
+          </div>
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword">
+            <div>do you want at least one upper case letter</div>
+          </div>
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword">
+            <div>do you want at least one  cap letter</div>
+          </div>
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword">
+            <div>do you want at least one symbol</div>
+          </div>
+        </div>
+  
         <div class="timerContainer centerFlex">
           <div class="circleContainer center">
             <div id="progressBar" class="circle2 center">
@@ -79,12 +98,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           <div id="displayPassword" placeholder="your password"></div>
           <i class="fas fa-lock"></i>
         </div>
-        
         <div id="level"></div>
         <button class="reset2">reset</button>
       </div>
     </div>
   </div>  
+</form>
 </body>
 <script src="https://kit.fontawesome.com/2da085e01f.js" crossorigin="anonymous"></script>
 <script src="index.js"></script>
