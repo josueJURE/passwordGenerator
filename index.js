@@ -5,8 +5,7 @@ const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
 const circleContainer = document.querySelector(`.circleContainer`);
-// const goBack1 = document.querySelector(`#goBack1`);
-const goBack2 = document.querySelector(`#goBack2`);
+
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
 const password = document.querySelector(`#password`);
@@ -14,8 +13,15 @@ const confirmPassword = document.querySelector(`#confirmPassword`);
 const doesPasswordsmatch = document.querySelector(`.doesPasswordsmatch`);
 const reset = document.querySelector(`.reset`)
 const reset2 = document.querySelector(`.reset2`);
-const form = document.querySelector(`.form`)
-console.log(form)
+const form = document.querySelector(`.form`);
+// create variables for checkbox
+const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
+const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
+const numberCheckBox = document.querySelector(`.numberCheckBox`);
+const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
+
+
+console.log(smallCapCheckBox, upperCaseCheckBox, numberCheckBox, symbolCheckBox)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
