@@ -4,6 +4,7 @@ const generatePasswordSection = document.querySelector(`.generatePasswordSection
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
+const dummy = document.querySelector(`#dummy`)
 const circleContainer = document.querySelector(`.circleContainer`);
 
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
@@ -21,7 +22,6 @@ const numberCheckBox = document.querySelector(`.numberCheckBox`);
 const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
 
 
-console.log(smallCapCheckBox, upperCaseCheckBox, numberCheckBox, symbolCheckBox)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
@@ -47,8 +47,15 @@ let firstPartpassword = "";
 
 createPasswordButton.addEventListener("click", function() {
     createPasswordSection.classList.remove("displayNone");
-    buttonContainer.classList.add("remove");
+    buttonContainer.classList.add("displayNone");
 });
+
+randomPasswordButton.addEventListener("click", function() {
+    generatePasswordSection.classList.remove('displayNone');
+    buttonContainer.classList.add("displayNone");
+});
+
+
 
 
 reset.addEventListener("click", function() {
@@ -60,7 +67,14 @@ reset.addEventListener("click", function() {
 })
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault()
+    e.preventDefault();
+// const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
+// const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
+// const numberCheckBox = document.querySelector(`.numberCheckBox`);
+// const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
+
+generatePassword()
+
 
     
 })
@@ -87,8 +101,7 @@ confirmPassword.addEventListener("keyup", function() {
 })
 
 
-console.log(password.value)
-console.log(confirmPassword.value)
+
 
 
 // if I give both elements the same class name say "dummy" can I create an Eventlistner
@@ -96,11 +109,7 @@ console.log(confirmPassword.value)
 checkboxPassword.addEventListener("change", switchPasswordType);
 checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 
-randomPasswordButton.addEventListener("click", function() {
-    generatePasswordSection.classList.remove("displayNone");
-    buttonContainer.classList.add("remove");
-    // randomPasswordButton.classList.add("remove");
-})
+
 
 reset2.addEventListener("click", function() {
     console.log("reset2 clicked")
@@ -112,26 +121,28 @@ reset2.addEventListener("click", function() {
 generatePasswordButton.addEventListener("click", generatePassword);
 
 
+
 function generatePassword() {
 
-    // let length = prompt("enter password length");
-    // passwordLength(length); 
-    // if(confirm("do you want at least one lower case character")) {
-    //     processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-    //     updateProgressBar();
-    // }
-    // if(confirm("do you want at least one upper case character")) {
-    //     processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-    //     updateProgressBar();
-    // }
-    // if(confirm("do you want at least one number")) {
-    //     processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-    //         updateProgressBar()
-    // }
-    // if(confirm("do you want at least one symbol")) {
-    //     processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-    //         updateProgressBar()
-    // }
+    if(smallCapCheckBox.checked) {
+        processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar();
+    }
+    if(upperCaseCheckBox.checked) {
+        processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar();
+    }
+    if(numberCheckBox.checked) {
+        processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar()
+    }
+    if(symbols.checked) {
+        processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+        updateProgressBar()
+    }
+    console.log(charactersPickedByUsers, arrayPickedByUser)
+
+
     firstPartpassword = charactersPickedByUsers.join("");
     console.log(firstPartpassword.length)
     goBack2.classList.add("remove");
