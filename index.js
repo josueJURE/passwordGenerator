@@ -22,6 +22,8 @@ const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
 const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
 const numberCheckBox = document.querySelector(`.numberCheckBox`);
 const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
+console.log(symbolCheckBox)
+console.log(smallCapCheckBox)
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
@@ -130,7 +132,7 @@ function generatePassword() {
         processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
         updateProgressBar()
     }
-    if(symbols.checked) {
+    if(symbolCheckBox.checked) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
         updateProgressBar()
     }
