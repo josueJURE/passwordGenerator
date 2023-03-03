@@ -145,7 +145,6 @@ function generatePassword() {
 
     firstPartpassword = charactersPickedByUsers.join("");
     console.log(firstPartpassword.length)
-    goBack2.classList.add("remove");
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
     circleContainer.style.animationDuration = "1s"
