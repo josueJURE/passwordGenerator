@@ -15,7 +15,9 @@ const doesPasswordsmatch = document.querySelector(`.doesPasswordsmatch`);
 const reset = document.querySelector(`.reset`)
 const reset2 = document.querySelector(`.reset2`);
 const form = document.querySelector(`.form`);
-// create variables for checkbox
+// create variables for range and checkbox elements
+const range = document.querySelector(`.range`);
+console.log(range)
 const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
 const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
 const numberCheckBox = document.querySelector(`.numberCheckBox`);
