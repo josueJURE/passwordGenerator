@@ -22,8 +22,6 @@ const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
 const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
 const numberCheckBox = document.querySelector(`.numberCheckBox`);
 const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
-
-
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
@@ -69,19 +67,14 @@ reset.addEventListener("click", function() {
 })
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-// const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
-// const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
-// const numberCheckBox = document.querySelector(`.numberCheckBox`);
-// const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
+    e.preventDefault(); 
+});
 
-generatePassword()
+generatePasswordButton.addEventListener("click", generatePassword);
 
-
-    
-})
-
-
+range.addEventListener("change", e => {
+    range.nextElementSibling.innerHTML = e.target.value;
+});
 
 
 
@@ -120,11 +113,10 @@ reset2.addEventListener("click", function() {
 })
 
 
-generatePasswordButton.addEventListener("click", generatePassword);
-
-
 
 function generatePassword() {
+
+    let length = range.value
 
     if(smallCapCheckBox.checked) {
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
