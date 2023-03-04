@@ -68,10 +68,6 @@ reset2.addEventListener("click", function() {
 });
 
 
-
-
-
-
 form.addEventListener("submit", (e) => {
     e.preventDefault(); 
 });
@@ -87,17 +83,18 @@ range.addEventListener("change", e => {
 
 
 confirmPassword.addEventListener("keyup", function() {
-    if(confirmPassword.value === password.value) {
+    if(password.value === "") {
+        alert("you must enter a password first");
+        return
+    }
+    else if(confirmPassword.value === password.value) {
         doesPasswordsmatch.classList.remove("displayNone");
         doesPasswordsmatch.style.color = "green"
         doesPasswordsmatch.innerHTML = "match";
     }
     else {
-        // doesPasswordsmatch.classList.toggle("displayNone")
-        // doesPasswordsmatch.classList.add("displayNone");
         doesPasswordsmatch.innerHTML = "don't match";
         doesPasswordsmatch.style.color = "red"
-      
     }
 })
 
