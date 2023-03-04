@@ -45,7 +45,7 @@ let firstPartpassword = "";
 
 
 
-// use form and checkbox 1/03/23
+
 
 createPasswordButton.addEventListener("click", function() {
     createPasswordSection.classList.remove("displayNone");
@@ -55,6 +55,11 @@ createPasswordButton.addEventListener("click", function() {
 randomPasswordButton.addEventListener("click", function() {
     generatePasswordSection.classList.remove('displayNone');
     buttonContainer.classList.add("displayNone");
+});
+
+reset2.addEventListener("click", function() {
+    generatePasswordSection.classList.toggle('displayNone');
+    buttonContainer.classList.toggle("displayNone");
 });
 
 
@@ -108,11 +113,7 @@ checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 
 
 
-reset2.addEventListener("click", function() {
-    console.log("reset2 clicked")
-    generatePasswordSection.classList.toggle("displayNone");
-    buttonContainer.classList.toggle("remove");
-})
+
 
 
 
