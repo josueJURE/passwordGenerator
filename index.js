@@ -52,6 +52,11 @@ createPasswordButton.addEventListener("click", function() {
     buttonContainer.classList.add("displayNone");
 });
 
+reset.addEventListener("click", function() {
+    createPasswordSection.classList.toggle("displayNone");
+    buttonContainer.classList.toggle("displayNone");
+});
+
 randomPasswordButton.addEventListener("click", function() {
     generatePasswordSection.classList.remove('displayNone');
     buttonContainer.classList.add("displayNone");
@@ -65,13 +70,7 @@ reset2.addEventListener("click", function() {
 
 
 
-reset.addEventListener("click", function() {
-    createPasswordSection.classList.toggle("displayNone");
-    console.log(buttonContainer.classList)
-    buttonContainer.classList.remove("remove");
-    console.log(buttonContainer.classList)
-    console.log("josue")
-})
+
 
 form.addEventListener("submit", (e) => {
     e.preventDefault(); 
