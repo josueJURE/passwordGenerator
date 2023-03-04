@@ -4,7 +4,8 @@ const generatePasswordSection = document.querySelector(`.generatePasswordSection
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
-const dummy = document.querySelector(`#dummy`)
+const dummy = document.querySelector(`#dummy`);
+const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
 
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
@@ -79,9 +80,6 @@ range.addEventListener("change", e => {
 });
 
 
-
-
-
 confirmPassword.addEventListener("keyup", function() {
     if(password.value === "") {
         alert("you must enter a password first");
@@ -94,9 +92,14 @@ confirmPassword.addEventListener("keyup", function() {
     }
     else {
         doesPasswordsmatch.innerHTML = "don't match";
-        doesPasswordsmatch.style.color = "red"
+        doesPasswordsmatch.style.color = "red";
     }
 })
+
+password.addEventListener("keyup", e => {
+    e.getModifierState("CapsLock") ? dummy2.innerHTML = "cap lock on" : dummy2.innerHTML = "";
+})
+
 
 
 
