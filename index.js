@@ -143,7 +143,17 @@ function generatePassword() {
 
     lengthPassword = firstPartpassword.length
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
-    progressText.innerHTML = userPasswordStrength(lengthPassword);
+    let counter = 0;
+    setInterval(() => {
+        if(counter < userPasswordStrength(lengthPassword)) {
+            counter++;
+            progressText.innerHTML = `password strenght ${counter}%`;
+        } else {
+            clearInterval;
+        }
+    }, 75)
+    
+    ;
     // point where value of firstPassword.length changes
     firstPartpassword += secondPartPassword;
     
@@ -194,16 +204,16 @@ function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByU
 
 function userPasswordStrength(dummyLength) {
     if(dummyLength === 1) {
-        return `password strength ${dummyLength*25}%`;
+        return dummyLength*25;
     }
     if(dummyLength === 2) {
-        return `password strength ${dummyLength*25}%`;
+        return dummyLength*25;
     }
     if(dummyLength === 3) {
-        return `password strength  ${dummyLength*25}%`;
+        return dummyLength*25;
     }
     else {
-        return `password strength  ${dummyLength*25}%`;
+        return dummyLength*25;
     }
 }
 
