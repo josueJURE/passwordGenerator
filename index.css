@@ -195,6 +195,7 @@ input {
   background: white;
   border-radius: 50%;
   position: relative;
+  animation: 3s ease-in-out forwards;
  
 }
 

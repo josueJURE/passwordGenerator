@@ -1,3 +1,5 @@
+// circular progress bar animation see bookmark
+
 const buttonContainer = document.querySelector(`.buttonContainer`);
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
 const generatePasswordSection = document.querySelector(`.generatePasswordSection`);
@@ -43,9 +45,6 @@ let arrayPickedByUser = [];
 let lengthPassword;
 let gaugeWidth = 800;
 let firstPartpassword = "";
-
-
-
 
 
 createPasswordButton.addEventListener("click", function() {
@@ -122,25 +121,17 @@ function generatePassword() {
 
     if(smallCapCheckBox.checked) {
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar();
     }
     if(upperCaseCheckBox.checked) {
         processesUserChoices(upperCaseLetters, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar();
     }
     if(numberCheckBox.checked) {
         processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar()
     }
     if(symbolCheckBox.checked) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-        updateProgressBar()
     }
-    console.log(charactersPickedByUsers, arrayPickedByUser)
-
-
     firstPartpassword = charactersPickedByUsers.join("");
-    console.log(firstPartpassword.length)
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
     circleContainer.style.animationDuration = "1s"
@@ -150,32 +141,15 @@ function generatePassword() {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
 
-
     lengthPassword = firstPartpassword.length
-  
-
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
     progressText.innerHTML = userPasswordStrength(lengthPassword);
     // point where value of firstPassword.length changes
     firstPartpassword += secondPartPassword;
     
     let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
-
-
     displayPassword.innerHTML = shuffledPassword.join("");
-    // passwordStrength.innerHTML = userPasswordStrength(lengthPassword)
-    // progressText.innerHTML = userPasswordStrength(lengthPassword);
 
-    console.log(firstPartpassword.length)
-   
-   
-    
-  
-
-}
-
-function circularProgressBar(progress) {
-    return `password strength ${progress*25}%`
 }
 
 function shuffleArray(array) {
@@ -210,20 +184,11 @@ function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByU
     arrayPickedByUser.push(...arrayUsed);
 }
 
-
-
-// function updateProgressBar() {
-//     var value1 = progressBar.value
-//     progressBar.value = value1 + 25
-//   }
-
   const updateProgressBar = () => {
     var value = 0;
     value++
     return value
   }
-
-
 
 
 
