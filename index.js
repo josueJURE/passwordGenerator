@@ -147,7 +147,7 @@ function generatePassword() {
             counter++;
             console.log(counter)
             progressText.innerHTML = `password strenght ${counter}%`;
-            incrementCircularProgressBar(counter*3.6);
+            incrementCircularProgressBar(counter);
             // circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
@@ -162,7 +162,7 @@ function generatePassword() {
     } else {
         color = "green";
     }
-    circleContainer.style.background = `conic-gradient(${color} ${count}deg, gray ${count}deg)`;
+    circleContainer.style.background = `conic-gradient(${color} ${count*3.6}deg, gray ${count*3.6}deg)`;
  }
 
 
