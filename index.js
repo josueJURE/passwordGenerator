@@ -1,5 +1,4 @@
-// circular progress bar animation see bookmark
-// should use keyframes I think
+// ciruclar increment bar must find a way to smoothly transition color
 
 const buttonContainer = document.querySelector(`.buttonContainer`);
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
@@ -12,6 +11,9 @@ const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
 
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
+const checkboxPasswordsArray = Array.from(document.querySelectorAll(`.checkboxPassword`));
+checkboxPasswordsArray.shift();
+ 
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
 const password = document.querySelector(`#password`);
 const confirmPassword = document.querySelector(`#confirmPassword`);
@@ -21,19 +23,18 @@ const reset2 = document.querySelector(`.reset2`);
 const form = document.querySelector(`.form`);
 // create variables for range and checkbox elements
 const range = document.querySelector(`.range`);
-console.log(range)
+
 const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
 const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
 const numberCheckBox = document.querySelector(`.numberCheckBox`);
 const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
-console.log(symbolCheckBox)
-console.log(smallCapCheckBox)
+
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
 const progressText = document.querySelector(`.progressText`);
 const level = document.querySelector(`#level`);
-console.log(level)
+
 // create arrays
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const upperCaseLetters = lowerCaseLetters.map(letter => letter.toUpperCase());
@@ -139,6 +140,8 @@ function generatePassword() {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
 
+  
+
     lengthPassword = firstPartpassword.length
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
     let counter = 0;
@@ -159,8 +162,10 @@ function generatePassword() {
         color = "red";
     } else if (count > 25 && count <= 50) {
         color = "orange";
+    } else if (count > 50 && count <= 75) {
+        color = "#DADD98"
     } else {
-        color = "green";
+        color = "green"
     }
     circleContainer.style.background = `conic-gradient(${color} ${count*3.6}deg, gray ${count*3.6}deg)`;
  }
