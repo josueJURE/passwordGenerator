@@ -1,4 +1,5 @@
 // circular progress bar animation see bookmark
+// should use keyframes I think
 
 const buttonContainer = document.querySelector(`.buttonContainer`);
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
@@ -134,9 +135,6 @@ function generatePassword() {
     firstPartpassword = charactersPickedByUsers.join("");
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
-    circleContainer.style.animationDuration = "1s"
-    circleContainer.style.background = `conic-gradient(green ${firstPartpassword.length*90}deg, gray ${firstPartpassword.length*90}deg)`;
-
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
@@ -148,18 +146,18 @@ function generatePassword() {
         if(counter < userPasswordStrength(lengthPassword)) {
             counter++;
             progressText.innerHTML = `password strenght ${counter}%`;
+            circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
         }
-    }, 75)
-    
-    ;
+    }, 75);
+
+
     // point where value of firstPassword.length changes
     firstPartpassword += secondPartPassword;
     
     let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
     displayPassword.innerHTML = shuffledPassword.join("");
-
 }
 
 function shuffleArray(array) {
