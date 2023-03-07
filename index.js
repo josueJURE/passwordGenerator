@@ -145,12 +145,25 @@ function generatePassword() {
     setInterval(() => {
         if(counter < userPasswordStrength(lengthPassword)) {
             counter++;
+            console.log(counter)
             progressText.innerHTML = `password strenght ${counter}%`;
-            circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
+            incrementCircularProgressBar(counter*3.6);
+            // circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
         }
     }, 75);
+
+ function incrementCircularProgressBar(count) {
+    if(count <= 25) {
+        color = "red";
+    } else if (count > 25 && count <= 50) {
+        color = "orange";
+    } else {
+        color = "green";
+    }
+    circleContainer.style.background = `conic-gradient(${color} ${count}deg, gray ${count}deg)`;
+ }
 
 
     // point where value of firstPassword.length changes
