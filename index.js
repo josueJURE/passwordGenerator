@@ -1,4 +1,5 @@
 // ciruclar increment bar must find a way to smoothly transition color
+// create function to check if checkboxPasswordsArray has at least one true value
 
 const buttonContainer = document.querySelector(`.buttonContainer`);
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
@@ -133,12 +134,22 @@ function generatePassword() {
     if(symbolCheckBox.checked) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
+
+    console.log(checkboxPasswordsArray)
+
+    checkboxPasswordsArray.find(hasAtLeastOneCheckBoxTicked)
     firstPartpassword = charactersPickedByUsers.join("");
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
+
+  
+
+
+
+  
 
   
 
@@ -176,6 +187,14 @@ function generatePassword() {
     
     let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
     displayPassword.innerHTML = shuffledPassword.join("");
+}
+
+function hasAtLeastOneCheckBoxTicked(element) {
+    element.checked === true
+    if(element.checked === "undefined") {
+        alert('ticked at least one box');
+        return;
+    }
 }
 
 function shuffleArray(array) {
