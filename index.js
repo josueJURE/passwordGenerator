@@ -135,7 +135,19 @@ function generatePassword() {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
 
-    console.log(checkboxPasswordsArray)
+    let dummy = checkboxPasswordsArray.find(element => element.checked === true) 
+
+
+    if(dummy === undefined) {
+        alert("ticked at least one box");
+        return;
+    }
+     
+
+ 
+  
+
+    console.log(checkboxPasswordsArray[0].checked)
 
     checkboxPasswordsArray.find(hasAtLeastOneCheckBoxTicked)
     firstPartpassword = charactersPickedByUsers.join("");
