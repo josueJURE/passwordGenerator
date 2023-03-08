@@ -134,7 +134,6 @@ function generatePassword() {
     if(symbolCheckBox.checked) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
-
     let hasValueTrue = checkboxPasswordsArray.find(element => element.checked === true);
  
     if(hasValueTrue === undefined) {
@@ -159,15 +158,9 @@ function generatePassword() {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
 
-  
-
-
-
-  
-
-  
 
     lengthPassword = firstPartpassword.length
+    console.log(lengthPassword)
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
     let counter = 0;
     setInterval(() => {
@@ -182,7 +175,22 @@ function generatePassword() {
         }
     }, 75);
 
- function incrementCircularProgressBar(count) {
+
+    // point where value of firstPassword.length changes
+    firstPartpassword += secondPartPassword;
+
+    /* would like to dinamycally call the function according
+     to password length. Has something to do with argument passed in
+     setTimeout in that case 3000
+    */
+    setTimeout(() => {
+        let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
+        displayPassword.innerHTML = shuffledPassword.join("")
+    }, 3000);
+}
+
+
+function incrementCircularProgressBar(count) {
     if(count <= 25) {
         color = "red";
     } else if (count > 25 && count <= 50) {
@@ -192,16 +200,9 @@ function generatePassword() {
     } else {
         color = "green"
     }
-    circleContainer.style.background = `conic-gradient(${color} ${count*3.6}deg, gray ${count*3.6}deg)`;
+    circleContainer.style.background = `conic-gradient(${color} ${count*3.6}deg, white ${count*3.6}deg)`;
+    circleContainer.style.background = `linear-gradient(to left, red, green ${count*3.6}deg)`;
  }
-
-
-    // point where value of firstPassword.length changes
-    firstPartpassword += secondPartPassword;
-    
-    let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
-    displayPassword.innerHTML = shuffledPassword.join("");
-}
 
 function hasAtLeastOneCheckboxBeenTicked(argument) {
     if(argument === undefined) {
