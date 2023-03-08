@@ -135,21 +135,23 @@ function generatePassword() {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
 
-    let dummy = checkboxPasswordsArray.find(element => element.checked === true) 
-
-
-    if(dummy === undefined) {
-        alert("ticked at least one box");
-        return;
-    }
-     
-
+    let hasValueTrue = checkboxPasswordsArray.find(element => element.checked === true);
  
-  
+    if(hasValueTrue === undefined) {
+        alert("tick at least one box");
+        return
+    }
 
-    console.log(checkboxPasswordsArray[0].checked)
+    /* codebars 14/03/22. Code keeps running when using hasAtLeastOneCheckboxBeenTicked() is called.
+     'undefined' displayed in element with class displayPassworContainer.
+     on the other hand code below working find
+     if(hasValueTrue === undefined) {
+        alert("tick at least one box");
+        return
+    }
+     */
+    // hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
 
-    checkboxPasswordsArray.find(hasAtLeastOneCheckBoxTicked)
     firstPartpassword = charactersPickedByUsers.join("");
     generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
@@ -201,13 +203,14 @@ function generatePassword() {
     displayPassword.innerHTML = shuffledPassword.join("");
 }
 
-function hasAtLeastOneCheckBoxTicked(element) {
-    element.checked === true
-    if(element.checked === "undefined") {
-        alert('ticked at least one box');
+function hasAtLeastOneCheckboxBeenTicked(argument) {
+    if(argument === undefined) {
+        alert("ticked at least one box");
         return;
     }
 }
+
+
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
