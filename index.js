@@ -53,6 +53,7 @@ let arrayPickedByUser = [];
 let lengthPassword;
 let gaugeWidth = 800;
 let firstPartpassword = "";
+let counter;
 
 
 createPasswordButton.addEventListener("click", function() {
@@ -170,7 +171,7 @@ function generatePassword() {
     lengthPassword = firstPartpassword.length
     console.log(lengthPassword)
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
-    let counter = 0;
+    counter = 0;
     setInterval(() => {
         if(counter < userPasswordStrength(lengthPassword)) {
             counter++;
@@ -293,6 +294,10 @@ function switchPasswordType(e) {
 
 function deselectAllButtons() {
     checkboxPasswordsArray.forEach(element => element.checked = false);
+    displayPassword.innerHTML = " ";
+    progressText.innerHTML = "";
+    circleContainer.style.background = "gray";
+    counter = 0;
 }
 
 
