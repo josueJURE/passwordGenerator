@@ -1,5 +1,8 @@
 // ciruclar increment bar must find a way to smoothly transition color
-// create function to check if checkboxPasswordsArray has at least one true value
+/* link to smoothly transition color
+https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient
+*/
+
 
 const buttonContainer = document.querySelector(`.buttonContainer`);
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
@@ -10,6 +13,8 @@ const generatePasswordButton = document.querySelector(`#generatePasswordButton`)
 const dummy = document.querySelector(`#dummy`);
 const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
+const reGeneratePassword = document.querySelector(`.reGeneratePassword`);
+
 
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxPasswordsArray = Array.from(document.querySelectorAll(`.checkboxPassword`));
@@ -81,6 +86,8 @@ range.addEventListener("change", e => {
     range.nextElementSibling.innerHTML = e.target.value;
 });
 
+reGeneratePassword.addEventListener("click", uncheckBoxes);
+
 
 confirmPassword.addEventListener("keyup", function() {
     if(password.value === "") {
@@ -134,6 +141,8 @@ function generatePassword() {
     if(symbolCheckBox.checked) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
+
+
     let hasValueTrue = checkboxPasswordsArray.find(element => element.checked === true);
  
     if(hasValueTrue === undefined) {
@@ -169,6 +178,7 @@ function generatePassword() {
             console.log(counter)
             progressText.innerHTML = `password strenght ${counter}%`;
             incrementCircularProgressBar(counter);
+            circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter*3.6}deg, yellow ${counter*3.6}deg, green ${counter*3.6}deg, blue ${counter*3.6}deg);`
             // circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
@@ -200,8 +210,13 @@ function incrementCircularProgressBar(count) {
     } else {
         color = "green"
     }
+    circleContainer.style.background = `conic-gradient(${color} 0deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg);`
     circleContainer.style.background = `conic-gradient(${color} ${count*3.6}deg, white ${count*3.6}deg)`;
-    circleContainer.style.background = `linear-gradient(to left, red, green ${count*3.6}deg)`;
+    // use CSS below to transition from red to green smoothly
+    // circleContainer.style.background = `linear-gradient(to left, red, green)`;
+    // circleContainer.style.background = `conic-gradient(red, orange, yellow, green, blue);
+    // conic-gradient(red 0deg, orange 90deg, yellow 180deg, green 270deg, blue 360deg);
+    // `
  }
 
 function hasAtLeastOneCheckboxBeenTicked(argument) {
@@ -268,8 +283,6 @@ function userPasswordStrength(dummyLength) {
     }
 }
 
-
-
 function switchPasswordType(e) {
     let element =  e.target.parentElement.previousElementSibling.lastElementChild
     if(e.target.checked) {
@@ -277,5 +290,10 @@ function switchPasswordType(e) {
     } else {
         element.type = "password"
     }
+}
+
+function uncheckBoxes() {
+    checkboxPasswordsArray
+
 }
 
