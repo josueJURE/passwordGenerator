@@ -86,8 +86,7 @@ range.addEventListener("change", e => {
     range.nextElementSibling.innerHTML = e.target.value;
 });
 
-reGeneratePassword.addEventListener("click", uncheckBoxes);
-
+reGeneratePassword.addEventListener("click", deselectAllButtons);
 
 confirmPassword.addEventListener("keyup", function() {
     if(password.value === "") {
@@ -144,7 +143,7 @@ function generatePassword() {
 
 
     let hasValueTrue = checkboxPasswordsArray.find(element => element.checked === true);
- 
+    
     if(hasValueTrue === undefined) {
         alert("tick at least one box");
         return
@@ -292,8 +291,9 @@ function switchPasswordType(e) {
     }
 }
 
-function uncheckBoxes() {
-    checkboxPasswordsArray
-
+function deselectAllButtons() {
+    checkboxPasswordsArray.forEach(element => element.checked = false);
 }
+
+
 
