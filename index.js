@@ -13,7 +13,6 @@ const generatePasswordButton = document.querySelector(`#generatePasswordButton`)
 const dummy = document.querySelector(`#dummy`);
 const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
-const reGeneratePassword = document.querySelector(`.reGeneratePassword`);
 const resetOrRegeneratePassword = document.querySelector(`.resetOrRegeneratePassword`);
 const checkboxSection = document.querySelector(`.checkboxSection`);
 
@@ -60,23 +59,31 @@ let counter;
 
 
 createPasswordButton.addEventListener("click", function() {
-    createPasswordSection.classList.remove("displayNone");
-    buttonContainer.classList.add("displayNone");
+    toggleElement(createPasswordSection);
+    toggleElement(buttonContainer);
+    // createPasswordSection.classList.remove("displayNone");
+    // buttonContainer.classList.add("displayNone");
 });
 
 reset.addEventListener("click", function() {
-    createPasswordSection.classList.toggle("displayNone");
-    buttonContainer.classList.toggle("displayNone");
+    toggleElement(createPasswordSection);
+    toggleElement( buttonContainer);
+    // createPasswordSection.classList.toggle("displayNone");
+    // buttonContainer.classList.toggle("displayNone");
 });
 
 randomPasswordButton.addEventListener("click", function() {
-    generatePasswordSection.classList.remove('displayNone');
-    buttonContainer.classList.add("displayNone");
+    toggleElement(generatePasswordSection);
+    toggleElement(buttonContainer);
+    // generatePasswordSection.classList.remove('displayNone');
+    // buttonContainer.classList.add("displayNone");
 });
 
 reset2.addEventListener("click", function() {
-    generatePasswordSection.classList.toggle('displayNone');
-    buttonContainer.classList.toggle("displayNone");
+    toggleElement(generatePasswordSection);
+    toggleElement(buttonContainer);
+    toggleElement(checkboxSection);
+    // deselectAllButtons()
 });
 
 
@@ -90,7 +97,6 @@ range.addEventListener("change", e => {
     range.nextElementSibling.innerHTML = e.target.value;
 });
 
-reGeneratePassword.addEventListener("click", deselectAllButtons);
 
 confirmPassword.addEventListener("keyup", function() {
     if(password.value === "") {
@@ -163,6 +169,7 @@ function generatePassword() {
     // hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
 
     firstPartpassword = charactersPickedByUsers.join("");
+    // toggleElement(showPassword)
     showPassword.classList.remove("displayNone");
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
@@ -170,7 +177,6 @@ function generatePassword() {
 
 
     lengthPassword = firstPartpassword.length
-    console.log(lengthPassword)
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
     counter = 0;
     setInterval(() => {
@@ -304,10 +310,11 @@ function switchPasswordType(e) {
 
 function deselectAllButtons() {
     checkboxPasswordsArray.forEach(element => element.checked = false);
-    displayPassword.innerHTML = " ";
+    range.value = 10;
     progressText.innerHTML = "";
+    displayPassword.innerHTML = " ";
     circleContainer.style.background = "gray";
-    counter = 0;
+    counter = '';
 }
 
 function toggleElement(element) {
