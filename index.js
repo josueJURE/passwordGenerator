@@ -15,6 +15,8 @@ const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
 const reGeneratePassword = document.querySelector(`.reGeneratePassword`);
 const resetOrRegeneratePassword = document.querySelector(`.resetOrRegeneratePassword`);
+const checkboxSection = document.querySelector(`.checkboxSection`);
+
 
 
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
@@ -143,14 +145,13 @@ function generatePassword() {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
 
-
     let hasValueTrue = checkboxPasswordsArray.find(element => element.checked === true);
     
     if(hasValueTrue === undefined) {
         alert("tick at least one box");
         return
     }
-
+    toggleElement(checkboxSection)
     /* codebars 14/03/22. Code keeps running when using hasAtLeastOneCheckboxBeenTicked() is called.
      'undefined' displayed in element with class displayPassworContainer.
      on the other hand code below working find
@@ -162,7 +163,6 @@ function generatePassword() {
     // hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
 
     firstPartpassword = charactersPickedByUsers.join("");
-    generatePasswordButton.classList.add('remove');
     showPassword.classList.remove("displayNone");
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
@@ -199,7 +199,11 @@ function generatePassword() {
     setTimeout(() => {
         let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
         displayPassword.innerHTML = shuffledPassword.join("");
-        resetOrRegeneratePassword.classList.toggle("displayNone")
+        toggleElement(resetOrRegeneratePassword);
+        toggleElement(generatePasswordButton);
+        // resetOrRegeneratePassword.classList.toggle("displayNone");
+        // generatePasswordButton.classList.toggle('displayNone');
+        
     }, 3000);
 
 
@@ -304,6 +308,10 @@ function deselectAllButtons() {
     progressText.innerHTML = "";
     circleContainer.style.background = "gray";
     counter = 0;
+}
+
+function toggleElement(element) {
+    element.classList.toggle(`displayNone`);
 }
 
 
