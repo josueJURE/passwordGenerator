@@ -14,6 +14,7 @@ const dummy = document.querySelector(`#dummy`);
 const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
 const reGeneratePassword = document.querySelector(`.reGeneratePassword`);
+const resetOrRegeneratePassword = document.querySelector(`.resetOrRegeneratePassword`);
 
 
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
@@ -179,12 +180,11 @@ function generatePassword() {
             progressText.innerHTML = `password strenght ${counter}%`;
             incrementCircularProgressBar(counter);
             circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter*3.6}deg, yellow ${counter*3.6}deg, green ${counter*3.6}deg, blue ${counter*3.6}deg);`;
-            setDisabledToFalse(reGeneratePassword);
-            setDisabledToFalse(reset2);
             // circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
         }
+        
     }, 75);
 
 
@@ -196,15 +196,13 @@ function generatePassword() {
      setTimeout in that case 3000
     */
 
-     function setDisabledToFalse(element) {
-        element.disabled = false
-     }
-
-
     setTimeout(() => {
         let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
-        displayPassword.innerHTML = shuffledPassword.join("")
+        displayPassword.innerHTML = shuffledPassword.join("");
+        resetOrRegeneratePassword.classList.toggle("displayNone")
     }, 3000);
+
+
 }
 
 
