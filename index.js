@@ -178,7 +178,9 @@ function generatePassword() {
             console.log(counter)
             progressText.innerHTML = `password strenght ${counter}%`;
             incrementCircularProgressBar(counter);
-            circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter*3.6}deg, yellow ${counter*3.6}deg, green ${counter*3.6}deg, blue ${counter*3.6}deg);`
+            circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter*3.6}deg, yellow ${counter*3.6}deg, green ${counter*3.6}deg, blue ${counter*3.6}deg);`;
+            setDisabledToFalse(reGeneratePassword);
+            setDisabledToFalse(reset2);
             // circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
@@ -193,6 +195,12 @@ function generatePassword() {
      to password length. Has something to do with argument passed in
      setTimeout in that case 3000
     */
+
+     function setDisabledToFalse(element) {
+        element.disabled = false
+     }
+
+
     setTimeout(() => {
         let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
         displayPassword.innerHTML = shuffledPassword.join("")
