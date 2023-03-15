@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
+    <title>Document</title>
+</head>
+<body>
+ 
+  <div class="buttonContainer">
+    <div class="buttonSection" >
+      <button id="createPasswordButton">Create your own password</button>
+      <button id="randomPasswordButton">Generate random password</button>
+    </div>
+  </div>
+
+  <form action="" class="form">
+  <div class="passwordContainer">
+    <div class="createPasswordSection displayNone">
+      <div class="enterValue">
+        <div class="writePassword input-group">
+          <i class="fas fa-lock "></i>
+          <input type="password" id="password" placeholder="enter password">
+        </div>
+        <div class="row">
+          <input type="checkbox" class="checkboxPassword">
+          <div>show password</div>
+        </div>
+        <div class="dummy2"></div>
+      </div>
+      <div class="enterValue">
+        <div class="writePassword input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="confirmPassword" placeholder="confirm password">
+        </div>
+        <div class="row">
+          <input type="checkbox" class="checkboxConfirmPassword">
+          <div>show confirmed password</div>
+        </div>
+        <div class="row">
+          <div class="doesPasswordsmatch displayNone">Match</div>
+        </div>
+        
+      </div>
+      
+    
+   
+      
+      <!-- label below might have to be removed 18/2/23 -->
+   
+     
+      <button class="reset" id="goBack1">GO BACK</button>
+    </div>
+    <div class="generatePasswordSection displayNone">
+      <div class="showPassword">
+        <div class="checkboxSection">
+          <div class="row">
+            <input type="range" class="range" min="10" max="20">
+            <div class="rangePassword"></div>
+          </div>
+
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword smallCapCheckBox">
+            <div>do you want at least one small cap letter</div>
+          </div>
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword upperCaseCheckBox">
+            <div>do you want at least one upper case letter</div>
+          </div>
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword numberCheckBox">
+            <div>do you want at least one  cap letter</div>
+          </div>
+          <div class="row">
+            <input type="checkbox" class="checkboxPassword symbolCheckBox">
+            <div>do you want at least one symbol</div>
+          </div>
+        </div>
+        <button type="submit" id="generatePasswordButton">generate password</button>
+
+        <div class="timerContainer centerFlex">
+          <div class="circleContainer center">
+            <div id="progressBar" class="circle2 center">
+              <div class="timer center progressText">Ready</div>
+            </div>
+          </div>
+        </div>
+        <div id="displayPasswordContainer">
+          <div id="displayPassword" placeholder="your password"></div>
+          <i class="fas fa-lock"></i>
+        </div>
+        <div id="level"></div>
+        <div class="resetOrRegeneratePassword displayNone">
+          <button class="reset2">reset</button>
+    
+        </div>
+      </div>
+    </div>
+  </div>  
+</form>
+</body>
+<script src="https://kit.fontawesome.com/2da085e01f.js" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</html>
