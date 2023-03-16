@@ -58,12 +58,17 @@ let firstPartpassword = "";
 let counter;
 
 
-createPasswordButton.addEventListener("click", function() {
-    toggleElement(createPasswordSection);
-    toggleElement(buttonContainer);
-    // createPasswordSection.classList.remove("displayNone");
-    // buttonContainer.classList.add("displayNone");
-});
+if(createPasswordButton !== null) {
+    createPasswordButton.addEventListener("click", function() {
+        toggleElement(createPasswordSection);
+        toggleElement(buttonContainer);
+        // createPasswordSection.classList.remove("displayNone");
+        // buttonContainer.classList.add("displayNone");
+    });
+}
+
+
+
 
 reset.addEventListener("click", function() {
     toggleElement(createPasswordSection);
@@ -72,30 +77,42 @@ reset.addEventListener("click", function() {
     // buttonContainer.classList.toggle("displayNone");
 });
 
-randomPasswordButton.addEventListener("click", function() {
-    toggleElement(generatePasswordSection);
-    toggleElement(buttonContainer);
-    // generatePasswordSection.classList.remove('displayNone');
-    // buttonContainer.classList.add("displayNone");
-});
-
-reset2.addEventListener("click", function() {
-    toggleElement(generatePasswordSection);
-    toggleElement(buttonContainer);
-    toggleElement(checkboxSection);
-    // deselectAllButtons()
-});
+if(randomPasswordButton !== null) {
+    randomPasswordButton.addEventListener("click", function() {
+        toggleElement(generatePasswordSection);
+        toggleElement(buttonContainer);
+    })
+}
 
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault(); 
-});
 
-generatePasswordButton.addEventListener("click", generatePassword);
+if(reset2 !== null) {
+    reset2.addEventListener("click", function() {
+        toggleElement(generatePasswordSection);
+        toggleElement(buttonContainer);
+        toggleElement(checkboxSection);
+        // deselectAllButtons()
+    })
+}
 
-range.addEventListener("change", e => {
-    range.nextElementSibling.innerHTML = e.target.value;
-});
+
+if(form !== null) {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(); 
+    });
+}
+
+
+if(generatePasswordButton !== null) {
+    generatePasswordButton.addEventListener("click", generatePassword);
+}
+
+if(range !== null) {
+    range.addEventListener("change", e => {
+        range.nextElementSibling.innerHTML = e.target.value;
+    });
+}
+
 
 
 confirmPassword.addEventListener("keyup", function() {
@@ -125,8 +142,8 @@ password.addEventListener("keyup", e => {
 
 // if I give both elements the same class name say "dummy" can I create an Eventlistner
 // using NodeList
-checkboxPassword.addEventListener("change", switchPasswordType);
-checkboxConfirmPassword.addEventListener('change', switchPasswordType);
+// checkboxPassword.addEventListener("change", switchPasswordType);
+// checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 
 
 
@@ -317,7 +334,7 @@ function deselectAllButtons() {
     counter = '';
 }
 
-function toggleElement(element) {
-    element.classList.toggle(`displayNone`);
-}
+// function toggleElement(element) {
+//     element.classList.toggle(`displayNone`);
+// }
 
