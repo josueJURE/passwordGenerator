@@ -60,8 +60,9 @@ let counter;
 
 if(createPasswordButton !== null) {
     createPasswordButton.addEventListener("click", function() {
-        toggleElement(createPasswordSection);
-        toggleElement(buttonContainer);
+        window.location.assign("/createPassword.html")
+        // toggleElement(createPasswordSection);
+        // toggleElement(buttonContainer);
         // createPasswordSection.classList.remove("displayNone");
         // buttonContainer.classList.add("displayNone");
     });
@@ -69,18 +70,20 @@ if(createPasswordButton !== null) {
 
 
 
+if(reset !== null) {
+    reset.addEventListener("click", function() {
+        window.location.assign("/homePage.html")
+        // toggleElement(createPasswordSection);
+        // toggleElement( buttonContainer);
+        // createPasswordSection.classList.toggle("displayNone");
+        // buttonContainer.classList.toggle("displayNone");
+    });
+}
 
-reset.addEventListener("click", function() {
-    toggleElement(createPasswordSection);
-    toggleElement( buttonContainer);
-    // createPasswordSection.classList.toggle("displayNone");
-    // buttonContainer.classList.toggle("displayNone");
-});
 
 if(randomPasswordButton !== null) {
     randomPasswordButton.addEventListener("click", function() {
-        toggleElement(generatePasswordSection);
-        toggleElement(buttonContainer);
+        window.location.assign("/generatePassword.html");
     })
 }
 
@@ -88,10 +91,7 @@ if(randomPasswordButton !== null) {
 
 if(reset2 !== null) {
     reset2.addEventListener("click", function() {
-        toggleElement(generatePasswordSection);
-        toggleElement(buttonContainer);
-        toggleElement(checkboxSection);
-        // deselectAllButtons()
+        window.location.assign("/homePage.html");
     })
 }
 
@@ -113,27 +113,31 @@ if(range !== null) {
     });
 }
 
+if(checkboxConfirmPassword !== null) {
+    confirmPassword.addEventListener("keyup", function() {
+        if(password.value === "") {
+            alert("you must enter a password first");
+            return
+        }
+        else if(confirmPassword.value === password.value) {
+            doesPasswordsmatch.classList.remove("displayNone");
+            doesPasswordsmatch.style.color = "green"
+            doesPasswordsmatch.innerHTML = "match";
+        }
+        else {
+            doesPasswordsmatch.innerHTML = "don't match";
+            doesPasswordsmatch.style.color = "red";
+        }
+    })
+}
 
 
-confirmPassword.addEventListener("keyup", function() {
-    if(password.value === "") {
-        alert("you must enter a password first");
-        return
-    }
-    else if(confirmPassword.value === password.value) {
-        doesPasswordsmatch.classList.remove("displayNone");
-        doesPasswordsmatch.style.color = "green"
-        doesPasswordsmatch.innerHTML = "match";
-    }
-    else {
-        doesPasswordsmatch.innerHTML = "don't match";
-        doesPasswordsmatch.style.color = "red";
-    }
-})
+if(password !== null) {
+    password.addEventListener("keyup", e => {
+        e.getModifierState("CapsLock") ? dummy2.innerHTML = "cap lock on" : dummy2.innerHTML = "";
+    })
+}
 
-password.addEventListener("keyup", e => {
-    e.getModifierState("CapsLock") ? dummy2.innerHTML = "cap lock on" : dummy2.innerHTML = "";
-})
 
 
 
@@ -142,8 +146,14 @@ password.addEventListener("keyup", e => {
 
 // if I give both elements the same class name say "dummy" can I create an Eventlistner
 // using NodeList
-// checkboxPassword.addEventListener("change", switchPasswordType);
-// checkboxConfirmPassword.addEventListener('change', switchPasswordType);
+if(checkboxPassword !== null) {
+    checkboxPassword.addEventListener("change", switchPasswordType);
+}
+if(checkboxConfirmPassword !== null) {
+    checkboxConfirmPassword.addEventListener('change', switchPasswordType);
+}
+
+
 
 
 
@@ -174,7 +184,7 @@ function generatePassword() {
         alert("tick at least one box");
         return
     }
-    toggleElement(checkboxSection)
+    // toggleElement(checkboxSection)
     /* codebars 14/03/22. Code keeps running when using hasAtLeastOneCheckboxBeenTicked() is called.
      'undefined' displayed in element with class displayPassworContainer.
      on the other hand code below working find
@@ -222,8 +232,8 @@ function generatePassword() {
     setTimeout(() => {
         let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
         displayPassword.innerHTML = shuffledPassword.join("");
-        toggleElement(resetOrRegeneratePassword);
-        toggleElement(generatePasswordButton);
+        // toggleElement(resetOrRegeneratePassword);
+        // toggleElement(generatePasswordButton);
         // resetOrRegeneratePassword.classList.toggle("displayNone");
         // generatePasswordButton.classList.toggle('displayNone');
         
