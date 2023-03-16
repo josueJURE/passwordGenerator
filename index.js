@@ -60,11 +60,7 @@ let counter;
 
 if(createPasswordButton !== null) {
     createPasswordButton.addEventListener("click", function() {
-        window.location.assign("/createPassword.html")
-        // toggleElement(createPasswordSection);
-        // toggleElement(buttonContainer);
-        // createPasswordSection.classList.remove("displayNone");
-        // buttonContainer.classList.add("displayNone");
+        window.location.assign("/createPassword.html");
     });
 }
 
@@ -73,10 +69,6 @@ if(createPasswordButton !== null) {
 if(reset !== null) {
     reset.addEventListener("click", function() {
         window.location.assign("/homePage.html")
-        // toggleElement(createPasswordSection);
-        // toggleElement( buttonContainer);
-        // createPasswordSection.classList.toggle("displayNone");
-        // buttonContainer.classList.toggle("displayNone");
     });
 }
 
@@ -131,7 +123,6 @@ if(checkboxConfirmPassword !== null) {
     })
 }
 
-
 if(password !== null) {
     password.addEventListener("keyup", e => {
         e.getModifierState("CapsLock") ? dummy2.innerHTML = "cap lock on" : dummy2.innerHTML = "";
@@ -139,26 +130,12 @@ if(password !== null) {
 }
 
 
-
-
-
-
-
-// if I give both elements the same class name say "dummy" can I create an Eventlistner
-// using NodeList
 if(checkboxPassword !== null) {
     checkboxPassword.addEventListener("change", switchPasswordType);
 }
 if(checkboxConfirmPassword !== null) {
     checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 }
-
-
-
-
-
-
-
 
 
 function generatePassword() {
@@ -196,7 +173,6 @@ function generatePassword() {
     // hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
 
     firstPartpassword = charactersPickedByUsers.join("");
-    // toggleElement(showPassword)
     showPassword.classList.remove("displayNone");
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
@@ -232,11 +208,6 @@ function generatePassword() {
     setTimeout(() => {
         let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
         displayPassword.innerHTML = shuffledPassword.join("");
-        // toggleElement(resetOrRegeneratePassword);
-        // toggleElement(generatePasswordButton);
-        // resetOrRegeneratePassword.classList.toggle("displayNone");
-        // generatePasswordButton.classList.toggle('displayNone');
-        
     }, 3000);
 
 
@@ -344,7 +315,5 @@ function deselectAllButtons() {
     counter = '';
 }
 
-// function toggleElement(element) {
-//     element.classList.toggle(`displayNone`);
-// }
+
 
