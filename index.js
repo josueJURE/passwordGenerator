@@ -4,7 +4,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient
 */
 
 /*
-animation for HTML pages to fade in and out, and have smoother transitions.
+17.03.23: look at slidesInFromRight & slidesInFromLeft CSS rules for animation and link saved
 */
 
 const buttonContainer = document.querySelector(`.buttonContainer`);
