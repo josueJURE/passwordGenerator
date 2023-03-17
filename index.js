@@ -3,6 +3,9 @@
 https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient
 */
 
+/* create a function for if(xxxx = null) {...}
+animation for HTML pages to fade in and out, and have smoother transitions.
+*/
 
 const buttonContainer = document.querySelector(`.buttonContainer`);
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
@@ -58,54 +61,52 @@ let firstPartpassword = "";
 let counter;
 
 
-if(createPasswordButton !== null) {
+if(IsElementEqualToNull(createPasswordButton)) {
     createPasswordButton.addEventListener("click", function() {
         window.location.assign("/createPassword.html");
     });
 }
 
-
-
-if(reset !== null) {
+if(IsElementEqualToNull(reset)) {
     reset.addEventListener("click", function() {
         window.location.assign("/homePage.html")
     });
 }
 
 
-if(randomPasswordButton !== null) {
+if(IsElementEqualToNull(randomPasswordButton)) {
     randomPasswordButton.addEventListener("click", function() {
         window.location.assign("/generatePassword.html");
-    })
+    });
 }
 
 
 
-if(reset2 !== null) {
+if(IsElementEqualToNull(reset2)) {
     reset2.addEventListener("click", function() {
         window.location.assign("/homePage.html");
     })
 }
 
 
-if(form !== null) {
+if(IsElementEqualToNull(form)) {
     form.addEventListener("submit", (e) => {
         e.preventDefault(); 
     });
 }
 
 
-if(generatePasswordButton !== null) {
+if(IsElementEqualToNull(generatePasswordButton)) {
     generatePasswordButton.addEventListener("click", generatePassword);
 }
 
-if(range !== null) {
+if(IsElementEqualToNull(range)) {
     range.addEventListener("change", e => {
         range.nextElementSibling.innerHTML = e.target.value;
     });
 }
 
-if(checkboxConfirmPassword !== null) {
+if(IsElementEqualToNull(confirmPassword)) {
     confirmPassword.addEventListener("keyup", function() {
         if(password.value === "") {
             alert("you must enter a password first");
@@ -123,17 +124,17 @@ if(checkboxConfirmPassword !== null) {
     })
 }
 
-if(password !== null) {
+if(IsElementEqualToNull(password)) {
     password.addEventListener("keyup", e => {
         e.getModifierState("CapsLock") ? dummy2.innerHTML = "cap lock on" : dummy2.innerHTML = "";
     })
 }
 
 
-if(checkboxPassword !== null) {
+if(IsElementEqualToNull(checkboxPassword)) {
     checkboxPassword.addEventListener("change", switchPasswordType);
 }
-if(checkboxConfirmPassword !== null) {
+if(IsElementEqualToNull(checkboxConfirmPassword)) {
     checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 }
 
@@ -213,7 +214,6 @@ function generatePassword() {
 
 }
 
-
 function incrementCircularProgressBar(count) {
     if(count <= 25) {
         color = "red";
@@ -239,8 +239,6 @@ function hasAtLeastOneCheckboxBeenTicked(argument) {
         return;
     }
 }
-
-
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -314,6 +312,11 @@ function deselectAllButtons() {
     circleContainer.style.background = "gray";
     counter = '';
 }
+
+function IsElementEqualToNull(element) {
+    return element !== null
+}
+
 
 
 
