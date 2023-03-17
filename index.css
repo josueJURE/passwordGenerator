@@ -214,3 +214,17 @@ input {
 .fas {
   transform: translateY(-10px);
 }
+
+.slidesInFromRight {
+  animation: expand .9s ease forwards;
+  transition: all .8s ease;
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

@@ -3,7 +3,7 @@
 https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient
 */
 
-/* create a function for if(xxxx = null) {...}
+/*
 animation for HTML pages to fade in and out, and have smoother transitions.
 */
 
