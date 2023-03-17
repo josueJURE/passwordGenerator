@@ -216,14 +216,31 @@ input {
 }
 
 .slidesInFromRight {
-  animation: expand .9s ease forwards;
-  transition: all .8s ease;
+  animation: expandFromRigth .9s ease forwards;
+  transition: all 1s ease;
 }
 
-@keyframes expand {
+ .slidesInFromLeft {
+  animation: expandFromLeft  .9s ease forwards;
+  transition: all 1s ease;
+
+ }
+
+@keyframes expandFromRigth {
   0% {
     transform: translateX(1400px);
   }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes expandFromLeft {
+  0% {
+    transform: translateX(-1400px);
+  }
+
   100% {
     transform: translateX(0px);
   }
