@@ -216,12 +216,12 @@ input {
 }
 
 .slidesInFromRight {
-  animation: expandFromRigth .9s ease forwards;
+  animation: expandFromRigth 1.2s ease forwards;
   transition: all 1s ease;
 }
 
  .slidesInFromLeft {
-  animation: expandFromLeft  .9s ease forwards;
+  animation: expandFromLeft  1.2s ease forwards;
   transition: all 1s ease;
 
  }
