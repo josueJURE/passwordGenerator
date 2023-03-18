@@ -226,6 +226,20 @@ input {
 
  }
 
+ .slidesInFromBottom {
+  animation: expandFromBottom 2s ease forwards;
+  transition: all 1s ease;
+ }
+
+ @keyframes expandFromBottom {
+  0% {
+    transform: translateY(1400px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+ }
+
 @keyframes expandFromRigth {
   0% {
     transform: translateX(1400px);
