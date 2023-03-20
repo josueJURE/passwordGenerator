@@ -4,7 +4,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient
 */
 
 /*
-17.03.23: look at slidesInFromRight & slidesInFromLeft CSS rules for animation and link saved
+18.03.23: look at slidesInFromRight & slidesInFromLeft CSS rules for animation and link saved
+add them to generatePassword.html and homePage.html
 */
 
 const buttonContainer = document.querySelector(`.buttonContainer`);

@@ -227,8 +227,8 @@ input {
  }
 
  .slidesInFromBottom {
-  animation: expandFromBottom 2s ease forwards;
-  transition: all 1s ease;
+  animation: expandFromBottom 1.2s ease forwards;
+  transition: all 1.4 ease;
  }
 
  @keyframes expandFromBottom {
