@@ -24,7 +24,8 @@ const checkboxSection = document.querySelector(`.checkboxSection`);
 
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxPasswordsArray = Array.from(document.querySelectorAll(`.checkboxPassword`));
-checkboxPasswordsArray.shift();
+console.log(checkboxPasswordsArray)
+// checkboxPasswordsArray.shift();
  
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
 const password = document.querySelector(`#password`);
@@ -158,6 +159,8 @@ function generatePassword() {
     }
 
     let hasValueTrue = checkboxPasswordsArray.find(element => element.checked === true);
+
+    console.log(hasValueTrue)
     
     if(hasValueTrue === undefined) {
         alert("tick at least one box");
@@ -234,12 +237,12 @@ function incrementCircularProgressBar(count) {
     // `
  }
 
-function hasAtLeastOneCheckboxBeenTicked(argument) {
-    if(argument === undefined) {
-        alert("ticked at least one box");
-        return;
-    }
-}
+// function hasAtLeastOneCheckboxBeenTicked(argument) {
+//     if(argument === undefined) {
+//         alert("ticked at least one box");
+//         return;
+//     }
+// }
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
