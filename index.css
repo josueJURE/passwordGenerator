@@ -81,9 +81,7 @@ button
 
 
 
-/* .remove {
-  display: none;
-} */
+
 
 .displayNone {
   display: none;
@@ -99,6 +97,21 @@ button:hover {
   scale: 1.1;
 
 }
+
+
+
+.displayPassword {
+  background-color: #ddd;
+  height: 100%;
+  width: 100%;
+  /* position: relative; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
 
 #passwordStrength,
 #displayPasswordContainer,
@@ -142,9 +155,9 @@ button:hover {
   position: relative;
 }
 
-#displayPassword {
+/* #displayPassword {
   background-color: #ddd;
-}
+} */
 
 i {
   background-color: #ddd;
@@ -211,9 +224,18 @@ input {
 
 }
 
-.fas {
-  transform: translateY(-10px);
+/* .fa-lock,
+.fa-edit
+{
+  position: absolute;
 }
+
+.fa-edit {
+  left: 10px;
+} */
+ 
+
+
 
 .slidesInFromRight {
   animation: expandFromRigth 1.2s ease forwards;

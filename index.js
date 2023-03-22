@@ -19,7 +19,7 @@ const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
 const resetOrRegeneratePassword = document.querySelector(`.resetOrRegeneratePassword`);
 const checkboxSection = document.querySelector(`.checkboxSection`);
-const CONVERT_TO_DEGRESS = 3.6
+const RATIO_TO_CONVERT_TO_DEGREES = 3.6;
 
 
 
@@ -44,7 +44,7 @@ const numberCheckBox = document.querySelector(`.numberCheckBox`);
 const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
 
 // const progressBar = document.querySelector('#progressBar');
-const displayPassword = document.querySelector('#displayPassword');
+const displayPassword = document.querySelector('.displayPassword');
 const showPassword = document.querySelector(`.showPassword`);
 const progressText = document.querySelector(`.progressText`);
 const level = document.querySelector(`#level`);
@@ -194,7 +194,7 @@ function generatePassword() {
             console.log(counter)
             progressText.innerHTML = `password strenght ${counter}%`;
             incrementCircularProgressBar(counter);
-            circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter*CONVERT_TO_DEGRESS}deg, yellow ${counter*CONVERT_TO_DEGRESS}deg, green ${counter*CONVERT_TO_DEGRESS}deg, blue ${counter*CONVERT_TO_DEGRESS}deg);`;
+            circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter*RATIO_TO_CONVERT_TO_DEGREES}deg, yellow ${counter*RATIO_TO_CONVERT_TO_DEGREES}deg, green ${counter*RATIO_TO_CONVERT_TO_DEGREES}deg, blue ${counter*RATIO_TO_CONVERT_TO_DEGREES}deg);`;
             // circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
