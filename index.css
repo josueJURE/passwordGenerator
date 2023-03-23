@@ -52,10 +52,11 @@
   flex-direction: column;
 }
 
-.buttonContainer,
+
 .createPasswordSection,
 .generatePasswordSection,
-.showPassword
+.showPassword,
+.displayFlex
  {
   width: 100%;
   height: 100vh;

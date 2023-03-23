@@ -8,7 +8,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient
 add them to generatePassword.html and homePage.html
 */
 
-const buttonContainer = document.querySelector(`.buttonContainer`);
+const buttonContainer = document.querySelector("#buttonContainer");
 const createPasswordSection = document.querySelector(`.createPasswordSection`);
 const generatePasswordSection = document.querySelector(`.generatePasswordSection`);
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
