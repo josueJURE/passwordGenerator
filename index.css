@@ -100,8 +100,8 @@ button:hover {
 
 }
 
-#displayPasswordContainer,
-.writePassword
+
+.container
  {
     width: 50%;
     height: 10px;
