@@ -12,8 +12,9 @@
   height: 10px;
 }
 
-.checkboxPassword,
-.checkboxConfirmPassword
+/* .checkboxPassword,
+.checkboxConfirmPassword */
+.row input[type="checkbox"]
  {
   width: 15px;
   height: 15px;
@@ -41,7 +42,7 @@
 }
 
 
-.displayFlexColumn
+.displayFlexColumn 
  {
   width: 100%;
   height: 100vh;
@@ -51,18 +52,6 @@
   flex-direction: column;
 }
 
-
-#createPasswordSection,
-#generatePasswordSection,
-#showPassword,
-.displayFlex
- {
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
 
 button
  {
@@ -80,9 +69,7 @@ button
 
 
 
-/* .remove {
-  display: none;
-} */
+
 
 .displayNone {
   display: none;
