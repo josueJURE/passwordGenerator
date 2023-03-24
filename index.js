@@ -45,7 +45,7 @@ const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
 
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector('#displayPassword');
-const showPassword = document.querySelector(`.showPassword`);
+const showPassword = document.querySelector("#showPassword");
 const progressText = document.querySelector(`.progressText`);
 const level = document.querySelector(`#level`);
 
