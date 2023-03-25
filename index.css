@@ -23,7 +23,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
 }
 
 .enterValue {
@@ -31,6 +30,7 @@
   flex-direction: column;
   margin-top: 15px;
 }
+
 .row {
   gap: 10px;
   display: flex;
@@ -67,7 +67,6 @@ button {
 progress {
   width: 50%;
   margin-bottom: 50px;
-
 }
 
 button:hover { 
@@ -160,7 +159,6 @@ input {
   border-radius: 50%;
   position: relative;
   animation: 3s ease-in-out forwards;
- 
 }
 
 .center {
@@ -172,7 +170,6 @@ input {
   text-align: center;
   width: 95%;
   background-color: #fff;
-
 }
 
 .fas {
@@ -187,7 +184,6 @@ input {
  .slidesInFromLeft {
   animation: expandFromLeft  1.2s ease forwards;
   transition: all 1s ease;
-
  }
 
  .slidesInFromBottom {
@@ -208,7 +204,6 @@ input {
   0% {
     transform: translateX(1400px);
   }
-
   100% {
     transform: translateX(0px);
   }
@@ -218,7 +213,6 @@ input {
   0% {
     transform: translateX(-1400px);
   }
-
   100% {
     transform: translateX(0px);
   }
