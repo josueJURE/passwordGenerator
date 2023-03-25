@@ -1,6 +1,7 @@
 import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword, userPasswordStrength } from "./function.js";
 import { createPasswordButton, randomPasswordButton } from "./homePage.js";
 import {dummy2, checkboxPassword, checkboxPasswordsArray, checkboxConfirmPassword, password, confirmPassword, doesPasswordsmatch, reset} from "./createPassword.js";
+import {reset2, form, range, smallCapCheckBox, upperCaseCheckBox, numberCheckBox, symbolCheckBox, generatePasswordButton, circleContainer, displayPassword, showPassword, progressText} from "./generatePassword.js"
 
 // create variables
 const CONVERT_TO_DEGRESS = 3.6;

@@ -10,3 +10,5 @@ const circleContainer = document.querySelector(".circleContainer");
 const displayPassword = document.querySelector("#displayPassword");
 const showPassword = document.querySelector("#showPassword");
 const progressText = document.querySelector(".progressText");
+
+export {reset2, form, range, smallCapCheckBox, upperCaseCheckBox, numberCheckBox, symbolCheckBox, generatePasswordButton, circleContainer, displayPassword, showPassword, progressText}
