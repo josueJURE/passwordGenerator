@@ -205,13 +205,6 @@ function restOfPassword(dummyLength, arrayPickedByUser) {
   return result;
 }
 
-function passwordLength(dummyLength) {
-  if (dummyLength < 10) {
-    alert("password must be at least 10 characters long");
-    return;
-  }
-}
-
 function processesUserChoices(
   arrayUsed,
   charactersPickedByUsers,
@@ -221,11 +214,6 @@ function processesUserChoices(
   charactersPickedByUsers.push(arrayUsed[randomIndex]);
   arrayPickedByUser.push(...arrayUsed);
 }
-const updateProgressBar = () => {
-  var value = 0;
-  value++;
-  return value;
-};
 
 function userPasswordStrength(dummyLength) {
   if (dummyLength === 1) {
@@ -250,14 +238,7 @@ function switchPasswordType(e) {
   }
 }
 
-function deselectAllButtons() {
-  checkboxPasswordsArray.forEach((element) => (element.checked = false));
-  range.value = 10;
-  progressText.innerHTML = "";
-  displayPassword.innerHTML = " ";
-  circleContainer.style.background = "gray";
-  counter = "";
-}
+
 
 function IsElementEqualToNull(element) {
   return element !== null;
