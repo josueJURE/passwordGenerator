@@ -59,7 +59,6 @@ let charactersPickedByUsers = [];
 let arrayPickedByUser = [];
 // create variables
 let lengthPassword;
-let gaugeWidth = 800;
 let firstPartpassword = "";
 let counter;
 
