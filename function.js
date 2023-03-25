@@ -27,7 +27,20 @@ function switchPasswordType(e) {
   }
 }
 
+function isElementNotEqualToNull(element) {
+  return element !== null;
+}
+
+function restOfPassword(dummyLength, arrayPickedByUser) {
+  let result = "";
+  for (var i = 0; i < dummyLength; i++) {
+    let randomIndex = Math.floor(Math.random() * arrayPickedByUser.length);
+    result += arrayPickedByUser[randomIndex];
+  }
+  return result;
+}
 
 
-export {shuffleArray, processesUserChoices, switchPasswordType}
+
+export {shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword}
 

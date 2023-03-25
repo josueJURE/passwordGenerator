@@ -1,4 +1,4 @@
-import { shuffleArray, processesUserChoices, switchPasswordType } from "./function.js";
+import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword } from "./function.js";
 
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
@@ -193,18 +193,6 @@ function incrementCircularProgressBar(count, color) {
   }deg, white ${count * 3.6}deg)`;
 }
 
-
-
-function restOfPassword(dummyLength, arrayPickedByUser) {
-  let result = "";
-  for (var i = 0; i < dummyLength; i++) {
-    let randomIndex = Math.floor(Math.random() * arrayPickedByUser.length);
-    result += arrayPickedByUser[randomIndex];
-  }
-  return result;
-}
-
-
 function userPasswordStrength(dummyLength) {
   if (dummyLength === 1) {
     return dummyLength * 25;
@@ -219,10 +207,6 @@ function userPasswordStrength(dummyLength) {
   }
 }
 
-// IsElementEqualToNull
 
 
 
-function isElementNotEqualToNull(element) {
-  return element !== null;
-}
