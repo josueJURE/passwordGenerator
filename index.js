@@ -1,5 +1,4 @@
 
-
 const buttonContainer = document.querySelector("#buttonContainer");
 const createPasswordSection = document.querySelector("#createPasswordSection");
 const generatePasswordSection = document.querySelector("#generatePasswordSection");
@@ -13,13 +12,10 @@ const resetOrRegeneratePassword = document.querySelector(`.resetOrRegeneratePass
 const checkboxSection = document.querySelector(`.checkboxSection`);
 const CONVERT_TO_DEGRESS = 3.6
 
-
-
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxPasswordsArray = Array.from(document.querySelectorAll(`.checkboxPassword`));
 console.log(checkboxPasswordsArray)
 
- 
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
 const password = document.querySelector(`#password`);
 const confirmPassword = document.querySelector(`#confirmPassword`);
@@ -54,52 +50,39 @@ let lengthPassword;
 let firstPartpassword = "";
 let counter;
 
-
 if(IsElementEqualToNull(createPasswordButton)) {
     createPasswordButton.addEventListener("click", function() {
         window.location.assign("/createPassword.html");
     });
 }
-
 if(IsElementEqualToNull(reset)) {
     reset.addEventListener("click", function() {
         window.location.assign("/homePage.html")
     });
 }
-
-
 if(IsElementEqualToNull(randomPasswordButton)) {
     randomPasswordButton.addEventListener("click", function() {
         window.location.assign("/generatePassword.html");
     });
 }
-
-
-
 if(IsElementEqualToNull(reset2)) {
     reset2.addEventListener("click", function() {
         window.location.assign("/homePage.html");
     })
 }
-
-
 if(IsElementEqualToNull(form)) {
     form.addEventListener("submit", (e) => {
         e.preventDefault(); 
     });
 }
-
-
 if(IsElementEqualToNull(generatePasswordButton)) {
     generatePasswordButton.addEventListener("click", generatePassword);
 }
-
 if(IsElementEqualToNull(range)) {
     range.addEventListener("change", e => {
         range.nextElementSibling.innerHTML = e.target.value;
     });
 }
-
 if(IsElementEqualToNull(confirmPassword)) {
     confirmPassword.addEventListener("keyup", function() {
         if(password.value === "") {
@@ -117,14 +100,11 @@ if(IsElementEqualToNull(confirmPassword)) {
         }
     })
 }
-
 if(IsElementEqualToNull(password)) {
     password.addEventListener("keyup", e => {
         e.getModifierState("CapsLock") ? dummy2.innerHTML = "cap lock on" : dummy2.innerHTML = "";
     })
 }
-
-
 if(IsElementEqualToNull(checkboxPassword)) {
     checkboxPassword.addEventListener("change", switchPasswordType);
 }
@@ -132,11 +112,8 @@ if(IsElementEqualToNull(checkboxConfirmPassword)) {
     checkboxConfirmPassword.addEventListener('change', switchPasswordType);
 }
 
-
 function generatePassword() {
-
     let length = range.value
-
     if(smallCapCheckBox.checked) {
         processesUserChoices(lowerCaseLetters, charactersPickedByUsers, arrayPickedByUser);
     }
@@ -149,11 +126,7 @@ function generatePassword() {
     if(symbolCheckBox.checked) {
         processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
-
     let hasValueTrue = checkboxPasswordsArray.find(element => element.checked === true);
-
-    console.log(hasValueTrue)
-    
     if(hasValueTrue === undefined) {
         alert("tick at least one box");
         return
@@ -168,14 +141,11 @@ function generatePassword() {
     }
      */
     // hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
-
     firstPartpassword = charactersPickedByUsers.join("");
     showPassword.classList.remove("displayNone");
     arrayPickedByUser = arrayPickedByUser.filter(function(val) {
         return charactersPickedByUsers.indexOf(val) == -1;
     })
-
-
     lengthPassword = firstPartpassword.length
     let secondPartPassword = restOfPassword(length-firstPartpassword.length, arrayPickedByUser);
     counter = 0;
@@ -189,16 +159,12 @@ function generatePassword() {
         } else {
             clearInterval;
         }
-        
     }, 75);
     firstPartpassword += secondPartPassword;
-
     setTimeout(() => {
         let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
         displayPassword.innerHTML = shuffledPassword.join("");
     }, 3000);
-
-
 }
 
 function incrementCircularProgressBar(count) {
@@ -213,10 +179,7 @@ function incrementCircularProgressBar(count) {
     }
     circleContainer.style.background = `conic-gradient(${color} 0deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg);`
     circleContainer.style.background = `conic-gradient(${color} ${count*3.6}deg, white ${count*3.6}deg)`;
-
  }
-
-
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -249,14 +212,11 @@ function processesUserChoices(arrayUsed, charactersPickedByUsers, arrayPickedByU
     charactersPickedByUsers.push(arrayUsed[randomIndex]);
     arrayPickedByUser.push(...arrayUsed);
 }
-
   const updateProgressBar = () => {
     var value = 0;
     value++
     return value
   }
-
-
 
 function userPasswordStrength(dummyLength) {
     if(dummyLength === 1) {
