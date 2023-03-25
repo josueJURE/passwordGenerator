@@ -40,7 +40,11 @@ function restOfPassword(dummyLength, arrayPickedByUser) {
   return result;
 }
 
+function userPasswordStrength(dummyLength) {
+    return dummyLength * 25;
+}
 
 
-export {shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword}
+
+export {shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword, userPasswordStrength}
 

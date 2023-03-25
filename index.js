@@ -1,4 +1,4 @@
-import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword } from "./function.js";
+import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword, userPasswordStrength } from "./function.js";
 
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
@@ -193,9 +193,7 @@ function incrementCircularProgressBar(count, color) {
   }deg, white ${count * 3.6}deg)`;
 }
 
-function userPasswordStrength(dummyLength) {
-    return dummyLength * 25;
-}
+
 
 
 
