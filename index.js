@@ -1,12 +1,4 @@
-// ciruclar increment bar must find a way to smoothly transition color
-/* link to smoothly transition color
-https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient
-*/
 
-/*
-18.03.23: look at slidesInFromRight & slidesInFromLeft CSS rules for animation and link saved
-add them to generatePassword.html and homePage.html
-*/
 
 const buttonContainer = document.querySelector("#buttonContainer");
 const createPasswordSection = document.querySelector("#createPasswordSection");
@@ -26,7 +18,7 @@ const CONVERT_TO_DEGRESS = 3.6
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxPasswordsArray = Array.from(document.querySelectorAll(`.checkboxPassword`));
 console.log(checkboxPasswordsArray)
-// checkboxPasswordsArray.shift();
+
  
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
 const password = document.querySelector(`#password`);
@@ -194,21 +186,12 @@ function generatePassword() {
             progressText.innerHTML = `password strenght ${counter}%`;
             incrementCircularProgressBar(counter);
             circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter*CONVERT_TO_DEGRESS}deg, yellow ${counter*CONVERT_TO_DEGRESS}deg, green ${counter*CONVERT_TO_DEGRESS}deg, blue ${counter*CONVERT_TO_DEGRESS}deg);`;
-            // circleContainer.style.background = `conic-gradient(green ${counter*3.6}deg, gray ${counter*3.6}deg)`;
         } else {
             clearInterval;
         }
         
     }, 75);
-
-
-    // point where value of firstPassword.length changes
     firstPartpassword += secondPartPassword;
-
-    /* would like to dinamycally call the function according
-     to password length. Has something to do with argument passed in
-     setTimeout in that case 3000
-    */
 
     setTimeout(() => {
         let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
@@ -230,19 +213,10 @@ function incrementCircularProgressBar(count) {
     }
     circleContainer.style.background = `conic-gradient(${color} 0deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg, ${color} ${count*3.6}deg);`
     circleContainer.style.background = `conic-gradient(${color} ${count*3.6}deg, white ${count*3.6}deg)`;
-    // use CSS below to transition from red to green smoothly
-    // circleContainer.style.background = `linear-gradient(to left, red, green)`;
-    // circleContainer.style.background = `conic-gradient(red, orange, yellow, green, blue);
-    // conic-gradient(red 0deg, orange 90deg, yellow 180deg, green 270deg, blue 360deg);
-    // `
+
  }
 
-// function hasAtLeastOneCheckboxBeenTicked(argument) {
-//     if(argument === undefined) {
-//         alert("ticked at least one box");
-//         return;
-//     }
-// }
+
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
