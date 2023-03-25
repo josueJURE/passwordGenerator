@@ -1,4 +1,4 @@
-import { shuffleArray } from "./function.js";
+import { shuffleArray, processesUserChoices } from "./function.js";
 
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
@@ -204,15 +204,6 @@ function restOfPassword(dummyLength, arrayPickedByUser) {
   return result;
 }
 
-function processesUserChoices(
-  arrayUsed,
-  charactersPickedByUsers,
-  arrayPickedByUser
-) {
-  const randomIndex = Math.floor(Math.random() * arrayUsed.length);
-  charactersPickedByUsers.push(arrayUsed[randomIndex]);
-  arrayPickedByUser.push(...arrayUsed);
-}
 
 function userPasswordStrength(dummyLength) {
   if (dummyLength === 1) {

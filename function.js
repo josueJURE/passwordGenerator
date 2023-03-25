@@ -8,5 +8,17 @@ function shuffleArray(array) {
   return array;
 }
 
-export {shuffleArray}
+function processesUserChoices(
+  arrayUsed,
+  charactersPickedByUsers,
+  arrayPickedByUser
+) {
+  const randomIndex = Math.floor(Math.random() * arrayUsed.length);
+  charactersPickedByUsers.push(arrayUsed[randomIndex]);
+  arrayPickedByUser.push(...arrayUsed);
+}
+
+
+
+export {shuffleArray, processesUserChoices}
 
