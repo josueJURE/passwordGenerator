@@ -31,12 +31,10 @@ const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
 const displayPassword = document.querySelector("#displayPassword");
 const showPassword = document.querySelector("#showPassword");
 const progressText = document.querySelector(`.progressText`);
-const level = document.querySelector(`#level`);
 
 // create arrays
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
-const symbolsNumbers = [...Array(31)].map((_, i) => String.fromCharCode(i + 33));
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let charactersPickedByUsers = [];
