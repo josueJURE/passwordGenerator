@@ -10,7 +10,6 @@ const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxPasswordsArray = Array.from(
   document.querySelectorAll(`.checkboxPassword`)
 );
-console.log(checkboxPasswordsArray);
 
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
 const password = document.querySelector(`#password`);
@@ -237,8 +236,6 @@ function switchPasswordType(e) {
     element.type = "password";
   }
 }
-
-
 
 function IsElementEqualToNull(element) {
   return element !== null;
