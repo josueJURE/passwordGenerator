@@ -1,21 +1,20 @@
 import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword, userPasswordStrength } from "./function.js";
+import { createPasswordButton, randomPasswordButton } from "./homePage.js";
+import {dummy2, checkboxPassword, checkboxPasswordsArray, checkboxConfirmPassword, password, confirmPassword, doesPasswordsmatch, reset} from "./createPassword.js";
 
-const createPasswordButton = document.querySelector("#createPasswordButton");
-const randomPasswordButton = document.querySelector("#randomPasswordButton");
+
+
+
+
+
 const generatePasswordButton = document.querySelector("#generatePasswordButton");
-const dummy2 = document.querySelector(".dummy2");
 const circleContainer = document.querySelector(".circleContainer");
 const CONVERT_TO_DEGRESS = 3.6;
-const checkboxPassword = document.querySelector(".checkboxPassword");
-const checkboxPasswordsArray = Array.from(
-  document.querySelectorAll(".checkboxPassword")
-);
 
-const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
-const password = document.querySelector("#password");
-const confirmPassword = document.querySelector("#confirmPassword");
-const doesPasswordsmatch = document.querySelector(".doesPasswordsmatch");
-const reset = document.querySelector(".reset");
+
+
+
+// stopped here
 const reset2 = document.querySelector(".reset2");
 const form = document.querySelector(".form");
 // create variables for range and checkbox elements
