@@ -1,18 +1,14 @@
 import { shuffleArray } from "./function.js";
 
-const buttonContainer = document.querySelector("#buttonContainer");
-const createPasswordSection = document.querySelector("#createPasswordSection");
-const generatePasswordSection = document.querySelector("#generatePasswordSection");
+
+
+
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
-const dummy = document.querySelector(`#dummy`);
 const dummy2 = document.querySelector(`.dummy2`);
 const circleContainer = document.querySelector(`.circleContainer`);
-const resetOrRegeneratePassword = document.querySelector(`.resetOrRegeneratePassword`);
-const checkboxSection = document.querySelector(`.checkboxSection`);
 const CONVERT_TO_DEGRESS = 3.6;
-
 const checkboxPassword = document.querySelector(`.checkboxPassword`);
 const checkboxPasswordsArray = Array.from(
   document.querySelectorAll(`.checkboxPassword`)
