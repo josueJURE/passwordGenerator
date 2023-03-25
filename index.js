@@ -43,40 +43,40 @@ let lengthPassword;
 let firstPartpassword = "";
 let counter;
 
-if (IsElementEqualToNull(createPasswordButton)) {
+if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
     window.location.assign("/createPassword.html");
   });
 }
-if (IsElementEqualToNull(reset)) {
+if (isElementNotEqualToNull(reset)) {
   reset.addEventListener("click", function () {
     window.location.assign("/homePage.html");
   });
 }
-if (IsElementEqualToNull(randomPasswordButton)) {
+if (isElementNotEqualToNull(randomPasswordButton)) {
   randomPasswordButton.addEventListener("click", function () {
     window.location.assign("/generatePassword.html");
   });
 }
-if (IsElementEqualToNull(reset2)) {
+if (isElementNotEqualToNull(reset2)) {
   reset2.addEventListener("click", function () {
     window.location.assign("/homePage.html");
   });
 }
-if (IsElementEqualToNull(form)) {
+if (isElementNotEqualToNull(form)) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
   });
 }
-if (IsElementEqualToNull(generatePasswordButton)) {
+if (isElementNotEqualToNull(generatePasswordButton)) {
   generatePasswordButton.addEventListener("click", generatePassword);
 }
-if (IsElementEqualToNull(range)) {
+if (isElementNotEqualToNull(range)) {
   range.addEventListener("change", (e) => {
     range.nextElementSibling.innerHTML = e.target.value;
   });
 }
-if (IsElementEqualToNull(confirmPassword)) {
+if (isElementNotEqualToNull(confirmPassword)) {
   confirmPassword.addEventListener("keyup", function () {
     if (password.value === "") {
       alert("you must enter a password first");
@@ -91,17 +91,17 @@ if (IsElementEqualToNull(confirmPassword)) {
     }
   });
 }
-if (IsElementEqualToNull(password)) {
+if (isElementNotEqualToNull(password)) {
   password.addEventListener("keyup", (e) => {
     e.getModifierState("CapsLock")
       ? (dummy2.innerHTML = "cap lock on")
       : (dummy2.innerHTML = "");
   });
 }
-if (IsElementEqualToNull(checkboxPassword)) {
+if (isElementNotEqualToNull(checkboxPassword)) {
   checkboxPassword.addEventListener("change", switchPasswordType);
 }
-if (IsElementEqualToNull(checkboxConfirmPassword)) {
+if (isElementNotEqualToNull(checkboxConfirmPassword)) {
   checkboxConfirmPassword.addEventListener("change", switchPasswordType);
 }
 
@@ -219,8 +219,10 @@ function userPasswordStrength(dummyLength) {
   }
 }
 
+// IsElementEqualToNull
 
 
-function IsElementEqualToNull(element) {
+
+function isElementNotEqualToNull(element) {
   return element !== null;
 }
