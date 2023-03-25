@@ -7,8 +7,7 @@ import {dummy2, checkboxPassword, checkboxPasswordsArray, checkboxConfirmPasswor
 
 
 
-const generatePasswordButton = document.querySelector("#generatePasswordButton");
-const circleContainer = document.querySelector(".circleContainer");
+
 const CONVERT_TO_DEGRESS = 3.6;
 
 
@@ -17,15 +16,13 @@ const CONVERT_TO_DEGRESS = 3.6;
 // stopped here
 const reset2 = document.querySelector(".reset2");
 const form = document.querySelector(".form");
-// create variables for range and checkbox elements
-const range = document.querySelector(`.range`);
-
+const range = document.querySelector(".range");
 const smallCapCheckBox = document.querySelector(".smallCapCheckBox");
 const upperCaseCheckBox = document.querySelector(".upperCaseCheckBox");
 const numberCheckBox = document.querySelector(".numberCheckBox");
 const symbolCheckBox = document.querySelector(".symbolCheckBox");
-
-// const progressBar = document.querySelector('#progressBar');
+const generatePasswordButton = document.querySelector("#generatePasswordButton");
+const circleContainer = document.querySelector(".circleContainer");
 const displayPassword = document.querySelector("#displayPassword");
 const showPassword = document.querySelector("#showPassword");
 const progressText = document.querySelector(".progressText");
