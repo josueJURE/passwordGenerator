@@ -2,39 +2,14 @@ import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqu
 import { createPasswordButton, randomPasswordButton } from "./homePage.js";
 import {dummy2, checkboxPassword, checkboxPasswordsArray, checkboxConfirmPassword, password, confirmPassword, doesPasswordsmatch, reset} from "./createPassword.js";
 
-
-
-
-
-
-
+// create variables
 const CONVERT_TO_DEGRESS = 3.6;
-
-
-
-
-// stopped here
-const reset2 = document.querySelector(".reset2");
-const form = document.querySelector(".form");
-const range = document.querySelector(".range");
-const smallCapCheckBox = document.querySelector(".smallCapCheckBox");
-const upperCaseCheckBox = document.querySelector(".upperCaseCheckBox");
-const numberCheckBox = document.querySelector(".numberCheckBox");
-const symbolCheckBox = document.querySelector(".symbolCheckBox");
-const generatePasswordButton = document.querySelector("#generatePasswordButton");
-const circleContainer = document.querySelector(".circleContainer");
-const displayPassword = document.querySelector("#displayPassword");
-const showPassword = document.querySelector("#showPassword");
-const progressText = document.querySelector(".progressText");
-
-// create arrays
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let charactersPickedByUsers = [];
 let arrayPickedByUser = [];
-// create variables
 let lengthPassword;
 let firstPartpassword = "";
 let counter;
