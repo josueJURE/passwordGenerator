@@ -194,17 +194,7 @@ function incrementCircularProgressBar(count, color) {
 }
 
 function userPasswordStrength(dummyLength) {
-  if (dummyLength === 1) {
     return dummyLength * 25;
-  }
-  if (dummyLength === 2) {
-    return dummyLength * 25;
-  }
-  if (dummyLength === 3) {
-    return dummyLength * 25;
-  } else {
-    return dummyLength * 25;
-  }
 }
 
 
