@@ -1,8 +1,5 @@
 import { shuffleArray } from "./function.js";
 
-
-
-
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
 const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
@@ -167,11 +164,7 @@ function generatePassword() {
       console.log(counter);
       progressText.innerHTML = `password strenght ${counter}%`;
       incrementCircularProgressBar(counter);
-      circleContainer.style.background = `conic-gradient(red 0deg, orange ${
-        counter * CONVERT_TO_DEGRESS
-      }deg, yellow ${counter * CONVERT_TO_DEGRESS}deg, green ${
-        counter * CONVERT_TO_DEGRESS
-      }deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
+      circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter * CONVERT_TO_DEGRESS}deg, yellow ${counter * CONVERT_TO_DEGRESS}deg, green ${counter * CONVERT_TO_DEGRESS}deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
     } else {
       clearInterval;
     }
@@ -183,7 +176,7 @@ function generatePassword() {
   }, 3000);
 }
 
-function incrementCircularProgressBar(count) {
+function incrementCircularProgressBar(count, color) {
   if (count <= 25) {
     color = "red";
   } else if (count > 25 && count <= 50) {
