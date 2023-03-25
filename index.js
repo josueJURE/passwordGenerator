@@ -1,3 +1,5 @@
+import { shuffleArray } from "./function.js";
+
 const buttonContainer = document.querySelector("#buttonContainer");
 const createPasswordSection = document.querySelector("#createPasswordSection");
 const generatePasswordSection = document.querySelector("#generatePasswordSection");
@@ -205,15 +207,7 @@ function incrementCircularProgressBar(count) {
   }deg, white ${count * 3.6}deg)`;
 }
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    let temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
+
 
 function restOfPassword(dummyLength, arrayPickedByUser) {
   let result = "";
