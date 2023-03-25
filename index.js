@@ -1,35 +1,35 @@
 import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword, userPasswordStrength } from "./function.js";
 
-const createPasswordButton = document.querySelector(`#createPasswordButton`);
-const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
-const generatePasswordButton = document.querySelector(`#generatePasswordButton`);
-const dummy2 = document.querySelector(`.dummy2`);
-const circleContainer = document.querySelector(`.circleContainer`);
+const createPasswordButton = document.querySelector("#createPasswordButton");
+const randomPasswordButton = document.querySelector("#randomPasswordButton");
+const generatePasswordButton = document.querySelector("#generatePasswordButton");
+const dummy2 = document.querySelector(".dummy2");
+const circleContainer = document.querySelector(".circleContainer");
 const CONVERT_TO_DEGRESS = 3.6;
-const checkboxPassword = document.querySelector(`.checkboxPassword`);
+const checkboxPassword = document.querySelector(".checkboxPassword");
 const checkboxPasswordsArray = Array.from(
-  document.querySelectorAll(`.checkboxPassword`)
+  document.querySelectorAll(".checkboxPassword")
 );
 
 const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword");
-const password = document.querySelector(`#password`);
-const confirmPassword = document.querySelector(`#confirmPassword`);
-const doesPasswordsmatch = document.querySelector(`.doesPasswordsmatch`);
-const reset = document.querySelector(`.reset`);
-const reset2 = document.querySelector(`.reset2`);
-const form = document.querySelector(`.form`);
+const password = document.querySelector("#password");
+const confirmPassword = document.querySelector("#confirmPassword");
+const doesPasswordsmatch = document.querySelector(".doesPasswordsmatch");
+const reset = document.querySelector(".reset");
+const reset2 = document.querySelector(".reset2");
+const form = document.querySelector(".form");
 // create variables for range and checkbox elements
 const range = document.querySelector(`.range`);
 
-const smallCapCheckBox = document.querySelector(`.smallCapCheckBox`);
-const upperCaseCheckBox = document.querySelector(`.upperCaseCheckBox`);
-const numberCheckBox = document.querySelector(`.numberCheckBox`);
-const symbolCheckBox = document.querySelector(`.symbolCheckBox`);
+const smallCapCheckBox = document.querySelector(".smallCapCheckBox");
+const upperCaseCheckBox = document.querySelector(".upperCaseCheckBox");
+const numberCheckBox = document.querySelector(".numberCheckBox");
+const symbolCheckBox = document.querySelector(".symbolCheckBox");
 
 // const progressBar = document.querySelector('#progressBar');
 const displayPassword = document.querySelector("#displayPassword");
 const showPassword = document.querySelector("#showPassword");
-const progressText = document.querySelector(`.progressText`);
+const progressText = document.querySelector(".progressText");
 
 // create arrays
 const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
