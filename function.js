@@ -18,7 +18,16 @@ function processesUserChoices(
   arrayPickedByUser.push(...arrayUsed);
 }
 
+function switchPasswordType(e) {
+  let element = e.target.parentElement.previousElementSibling.lastElementChild;
+  if (e.target.checked) {
+    element.type = "input";
+  } else {
+    element.type = "password";
+  }
+}
 
 
-export {shuffleArray, processesUserChoices}
+
+export {shuffleArray, processesUserChoices, switchPasswordType}
 

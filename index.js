@@ -1,4 +1,4 @@
-import { shuffleArray, processesUserChoices } from "./function.js";
+import { shuffleArray, processesUserChoices, switchPasswordType } from "./function.js";
 
 const createPasswordButton = document.querySelector(`#createPasswordButton`);
 const randomPasswordButton = document.querySelector(`#randomPasswordButton`);
@@ -219,14 +219,7 @@ function userPasswordStrength(dummyLength) {
   }
 }
 
-function switchPasswordType(e) {
-  let element = e.target.parentElement.previousElementSibling.lastElementChild;
-  if (e.target.checked) {
-    element.type = "input";
-  } else {
-    element.type = "password";
-  }
-}
+
 
 function IsElementEqualToNull(element) {
   return element !== null;
