@@ -159,7 +159,7 @@ function generatePassword() {
     arrayPickedByUser
   );
   counter = 0;
-  setInterval(() => {
+  let circularProgressBarInterval = setInterval(() => {
     if (counter < userPasswordStrength(lengthPassword)) {
       counter++;
       console.log(counter);
@@ -171,7 +171,8 @@ function generatePassword() {
         counter * CONVERT_TO_DEGRESS
       }deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
     } else {
-      clearInterval;
+      clearInterval(circularProgressBarInterval);
+      
     }
   }, 75);
   firstPartpassword += secondPartPassword;
