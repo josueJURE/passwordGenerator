@@ -8,7 +8,7 @@ import {
 } from "./function.js";
 import { createPasswordButton, randomPasswordButton } from "./homePage.js";
 import {
-  dummy2,
+  capLockOn,
   checkboxPassword,
   checkboxPasswordsArray,
   checkboxConfirmPassword,
@@ -96,8 +96,8 @@ if (isElementNotEqualToNull(confirmPassword)) {
 if (isElementNotEqualToNull(password)) {
   password.addEventListener("keyup", (e) => {
     e.getModifierState("CapsLock")
-      ? (dummy2.innerHTML = "cap lock on")
-      : (dummy2.innerHTML = "");
+      ? (capLockOn.innerHTML = "cap lock on")
+      : (capLockOn.innerHTML = "");
   });
 }
 if (isElementNotEqualToNull(checkboxPassword)) {
