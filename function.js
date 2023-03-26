@@ -40,8 +40,8 @@ function createRestOfPassword(length, arrayPickedByUser) {
   return result;
 }
 
-function userPasswordStrength(dummyLength) {
-    return dummyLength * 25;
+function userPasswordStrength(length) {
+    return length * 25;
 }
 
 
