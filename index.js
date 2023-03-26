@@ -40,8 +40,7 @@ const lowerCaseLetters = [...Array(26)].map((_, i) =>
 const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
-let charactersPickedByUsers = [];
-let arrayPickedByUser = [];
+
 let lengthPassword;
 let firstPartpassword = "";
 let counter;
@@ -109,6 +108,8 @@ if (isElementNotEqualToNull(checkboxConfirmPassword)) {
 }
 
 function generatePassword() {
+  let charactersPickedByUsers = [];
+  let arrayPickedByUser = [];
   let length = range.value;
   if (smallCapCheckBox.checked) {
     processesUserChoices(
@@ -153,7 +154,7 @@ function generatePassword() {
     return charactersPickedByUsers.indexOf(val) == -1;
   });
   lengthPassword = firstPartpassword.length;
-  let secondPartPassword =  createRestOfPassword(
+  let secondPartPassword = createRestOfPassword(
     length - firstPartpassword.length,
     arrayPickedByUser
   );
