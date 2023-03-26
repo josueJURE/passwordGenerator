@@ -6,6 +6,6 @@ const checkboxConfirmPassword = document.querySelector(".checkboxConfirmPassword
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
 const doesPasswordsmatch = document.querySelector(".doesPasswordsmatch");
-const reset = document.querySelector(".reset");
+const retunrHomePage = document.querySelector(".retunrHomePage");
 
-export {capLockOn, checkboxPassword, checkboxPasswordsArray, checkboxConfirmPassword, password, confirmPassword, doesPasswordsmatch, reset}
+export {capLockOn, checkboxPassword, checkboxPasswordsArray, checkboxConfirmPassword, password, confirmPassword, doesPasswordsmatch, retunrHomePage}

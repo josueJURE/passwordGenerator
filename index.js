@@ -15,7 +15,7 @@ import {
   password,
   confirmPassword,
   doesPasswordsmatch,
-  reset,
+  retunrHomePage,
 } from "./createPassword.js";
 import {
   goToHomePage,
@@ -50,8 +50,8 @@ if (isElementNotEqualToNull(createPasswordButton)) {
     window.location.assign("/createPassword.html");
   });
 }
-if (isElementNotEqualToNull(reset)) {
-  reset.addEventListener("click", function () {
+if (isElementNotEqualToNull(rese)) {
+  rese.addEventListener("click", function () {
     window.location.assign("/homePage.html");
   });
 }
