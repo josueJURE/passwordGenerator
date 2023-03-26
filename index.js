@@ -172,14 +172,15 @@ function generatePassword() {
       }deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
     } else {
       clearInterval(circularProgressBarInterval);
-      
+      firstPartpassword += secondPartPassword;
+      let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
+      displayPassword.innerHTML = shuffledPassword.join("");
     }
   }, 75);
-  firstPartpassword += secondPartPassword;
-  setTimeout(() => {
-    let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
-    displayPassword.innerHTML = shuffledPassword.join("");
-  }, 3000);
+  
+  // setTimeout(() => {
+  
+  // }, 3000);
 }
 
 function incrementCircularProgressBar(count, color) {
