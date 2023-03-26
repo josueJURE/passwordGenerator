@@ -108,6 +108,7 @@ if (isElementNotEqualToNull(checkboxConfirmPassword)) {
 }
 
 function generatePassword() {
+  displayPassword.innerHTML = "";
   let charactersPickedByUsers = [];
   let arrayPickedByUser = [];
   let length = range.value;
@@ -178,9 +179,6 @@ function generatePassword() {
     }
   }, 75);
   
-  // setTimeout(() => {
-  
-  // }, 3000);
 }
 
 function incrementCircularProgressBar(count, color) {
