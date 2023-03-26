@@ -31,7 +31,7 @@ function isElementNotEqualToNull(element) {
   return element !== null;
 }
 
-function restOfPassword(dummyLength, arrayPickedByUser) {
+function createRestOfPassword(dummyLength, arrayPickedByUser) {
   let result = "";
   for (var i = 0; i < dummyLength; i++) {
     let randomIndex = Math.floor(Math.random() * arrayPickedByUser.length);
@@ -46,5 +46,5 @@ function userPasswordStrength(dummyLength) {
 
 
 
-export {shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword, userPasswordStrength}
+export {shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, userPasswordStrength}
 

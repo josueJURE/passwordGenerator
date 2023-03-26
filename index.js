@@ -1,11 +1,42 @@
-import { shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull, restOfPassword, userPasswordStrength } from "./function.js";
+import {
+  shuffleArray,
+  processesUserChoices,
+  switchPasswordType,
+  isElementNotEqualToNull,
+  createRestOfPassword,
+  userPasswordStrength,
+} from "./function.js";
 import { createPasswordButton, randomPasswordButton } from "./homePage.js";
-import {dummy2, checkboxPassword, checkboxPasswordsArray, checkboxConfirmPassword, password, confirmPassword, doesPasswordsmatch, reset} from "./createPassword.js";
-import {reset2, form, range, smallCapCheckBox, upperCaseCheckBox, numberCheckBox, symbolCheckBox, generatePasswordButton, circleContainer, displayPassword, showPassword, progressText} from "./generatePassword.js"
+import {
+  dummy2,
+  checkboxPassword,
+  checkboxPasswordsArray,
+  checkboxConfirmPassword,
+  password,
+  confirmPassword,
+  doesPasswordsmatch,
+  reset,
+} from "./createPassword.js";
+import {
+  reset2,
+  form,
+  range,
+  smallCapCheckBox,
+  upperCaseCheckBox,
+  numberCheckBox,
+  symbolCheckBox,
+  generatePasswordButton,
+  circleContainer,
+  displayPassword,
+  showPassword,
+  progressText,
+} from "./generatePassword.js";
 
 // create variables
 const CONVERT_TO_DEGRESS = 3.6;
-const lowerCaseLetters = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+const lowerCaseLetters = [...Array(26)].map((_, i) =>
+  String.fromCharCode(i + 97)
+);
 const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
@@ -122,7 +153,7 @@ function generatePassword() {
     return charactersPickedByUsers.indexOf(val) == -1;
   });
   lengthPassword = firstPartpassword.length;
-  let secondPartPassword = restOfPassword(
+  let secondPartPassword =  createRestOfPassword(
     length - firstPartpassword.length,
     arrayPickedByUser
   );
@@ -133,7 +164,11 @@ function generatePassword() {
       console.log(counter);
       progressText.innerHTML = `password strenght ${counter}%`;
       incrementCircularProgressBar(counter);
-      circleContainer.style.background = `conic-gradient(red 0deg, orange ${counter * CONVERT_TO_DEGRESS}deg, yellow ${counter * CONVERT_TO_DEGRESS}deg, green ${counter * CONVERT_TO_DEGRESS}deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
+      circleContainer.style.background = `conic-gradient(red 0deg, orange ${
+        counter * CONVERT_TO_DEGRESS
+      }deg, yellow ${counter * CONVERT_TO_DEGRESS}deg, green ${
+        counter * CONVERT_TO_DEGRESS
+      }deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
     } else {
       clearInterval;
     }
@@ -164,9 +199,3 @@ function incrementCircularProgressBar(count, color) {
     count * 3.6
   }deg, white ${count * 3.6}deg)`;
 }
-
-
-
-
-
-
