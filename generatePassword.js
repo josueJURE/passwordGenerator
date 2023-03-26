@@ -1,4 +1,4 @@
-const reset2 = document.querySelector(".reset2");
+const goToHomePage = document.querySelector(".goToHomePage");
 const form = document.querySelector(".form");
 const range = document.querySelector(".range");
 const smallCapCheckBox = document.querySelector(".smallCapCheckBox");
@@ -11,4 +11,4 @@ const displayPassword = document.querySelector("#displayPassword");
 const showPassword = document.querySelector("#showPassword");
 const progressText = document.querySelector(".progressText");
 
-export {reset2, form, range, smallCapCheckBox, upperCaseCheckBox, numberCheckBox, symbolCheckBox, generatePasswordButton, circleContainer, displayPassword, showPassword, progressText}
+export {goToHomePage, form, range, smallCapCheckBox, upperCaseCheckBox, numberCheckBox, symbolCheckBox, generatePasswordButton, circleContainer, displayPassword, showPassword, progressText}

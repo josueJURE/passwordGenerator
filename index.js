@@ -18,7 +18,7 @@ import {
   reset,
 } from "./createPassword.js";
 import {
-  reset2,
+  goToHomePage,
   form,
   range,
   smallCapCheckBox,
@@ -60,8 +60,8 @@ if (isElementNotEqualToNull(randomPasswordButton)) {
     window.location.assign("/generatePassword.html");
   });
 }
-if (isElementNotEqualToNull(reset2)) {
-  reset2.addEventListener("click", function () {
+if (isElementNotEqualToNull(goToHomePage)) {
+  goToHomePage.addEventListener("click", function () {
     window.location.assign("/homePage.html");
   });
 }
