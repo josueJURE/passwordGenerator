@@ -8,7 +8,7 @@ function shuffleArray(array) {
   return array;
 }
 
-function processesUserChoices(
+function processUserChoices(
   arrayUsed,
   charactersPickedByUsers,
   arrayPickedByUser
@@ -40,11 +40,11 @@ function createRestOfPassword(length, arrayPickedByUser) {
   return result;
 }
 
-function userPasswordStrength(length) {
+function calculateUserPasswordStrength(length) {
     return length * 25;
 }
 
 
 
-export {shuffleArray, processesUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, userPasswordStrength}
+export {shuffleArray, processUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, calculateUserPasswordStrength}
 

@@ -1,10 +1,10 @@
 import {
   shuffleArray,
-  processesUserChoices,
+  processUserChoices,
   switchPasswordType,
   isElementNotEqualToNull,
   createRestOfPassword,
-  userPasswordStrength,
+  calculateUserPasswordStrength,
 } from "./function.js";
 import { createPasswordButton, randomPasswordButton } from "./homePage.js";
 import {
@@ -50,8 +50,8 @@ if (isElementNotEqualToNull(createPasswordButton)) {
     window.location.assign("/createPassword.html");
   });
 }
-if (isElementNotEqualToNull(rese)) {
-  rese.addEventListener("click", function () {
+if (isElementNotEqualToNull(retunrHomePage)) {
+  retunrHomePage.addEventListener("click", function () {
     window.location.assign("/homePage.html");
   });
 }
@@ -113,24 +113,24 @@ function generatePassword() {
   let arrayPickedByUser = [];
   let length = range.value;
   if (smallCapCheckBox.checked) {
-    processesUserChoices(
+    processUserChoices(
       lowerCaseLetters,
       charactersPickedByUsers,
       arrayPickedByUser
     );
   }
   if (upperCaseCheckBox.checked) {
-    processesUserChoices(
+    processUserChoices(
       upperCaseLetters,
       charactersPickedByUsers,
       arrayPickedByUser
     );
   }
   if (numberCheckBox.checked) {
-    processesUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+    processUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
   }
   if (symbolCheckBox.checked) {
-    processesUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+    processUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
   }
   let hasValueTrue = checkboxPasswordsArray.find(
     (element) => element.checked === true
@@ -161,7 +161,7 @@ function generatePassword() {
   );
   counter = 0;
   let circularProgressBarInterval = setInterval(() => {
-    if (counter < userPasswordStrength(lengthPassword)) {
+    if (counter < calculateUserPasswordStrength(lengthPassword)) {
       counter++;
       console.log(counter);
       progressText.innerHTML = `password strenght ${counter}%`;
