@@ -31,9 +31,9 @@ function isElementNotEqualToNull(element) {
   return element !== null;
 }
 
-function createRestOfPassword(dummyLength, arrayPickedByUser) {
+function createRestOfPassword(length, arrayPickedByUser) {
   let result = "";
-  for (var i = 0; i < dummyLength; i++) {
+  for (var i = 0; i < length; i++) {
     let randomIndex = Math.floor(Math.random() * arrayPickedByUser.length);
     result += arrayPickedByUser[randomIndex];
   }
