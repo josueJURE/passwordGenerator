@@ -41,9 +41,10 @@ const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 
-let lengthPassword;
+let lengthPassword, counter;
 let firstPartpassword = "";
-let counter;
+let passwordList = new Map()
+
 
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
@@ -177,8 +178,12 @@ function generatePassword() {
       firstPartpassword += secondPartPassword;
       let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
       displayPassword.innerHTML = shuffledPassword.join("");
+      passwordList.set("userPassword", shuffledPassword.join(""));
+      console.log(passwordList)
     }
   }, 75);
+
+
   
 }
 
