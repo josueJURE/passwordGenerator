@@ -113,6 +113,7 @@ function generatePassword() {
   let charactersPickedByUsers = [];
   let firstPartpassword = "";
   displayPassword.innerHTML = "";
+  let secondPartPassword;
  
   let arrayPickedByUser = [];
   let length = range.value;
@@ -138,6 +139,19 @@ function generatePassword() {
     if (symbolCheckBox.checked) {
       processUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
+
+    firstPartpassword = charactersPickedByUsers.join("");
+    showPassword.classList.remove("displayNone");
+    arrayPickedByUser = arrayPickedByUser.filter(function (val) {
+      return charactersPickedByUsers.indexOf(val) == -1;
+    });
+    lengthPassword = firstPartpassword.length;
+      let secondPartPassword = createRestOfPassword(
+      length - firstPartpassword.length,
+      arrayPickedByUser
+    );
+    firstPartpassword += secondPartPassword
+
   }
   generateFirstPartPassword();
   let hasValueTrue = checkboxPasswordsArray.find(
@@ -157,16 +171,7 @@ function generatePassword() {
     }
      */
   // hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
-  firstPartpassword = charactersPickedByUsers.join("");
-  showPassword.classList.remove("displayNone");
-  arrayPickedByUser = arrayPickedByUser.filter(function (val) {
-    return charactersPickedByUsers.indexOf(val) == -1;
-  });
-  lengthPassword = firstPartpassword.length;
-  let secondPartPassword = createRestOfPassword(
-    length - firstPartpassword.length,
-    arrayPickedByUser
-  );
+
   counter = 0;
   let circularProgressBarInterval = setInterval(() => {
     if (counter < calculateUserPasswordStrength(lengthPassword)) {
