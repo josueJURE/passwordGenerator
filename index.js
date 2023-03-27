@@ -43,7 +43,6 @@ const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 
 let lengthPassword, counter;
 let firstPartpassword = "";
-let passwordList = new Map()
 
 
 if (isElementNotEqualToNull(createPasswordButton)) {
@@ -52,9 +51,13 @@ if (isElementNotEqualToNull(createPasswordButton)) {
   });
 }
 if (isElementNotEqualToNull(returnHomePage)) {
-  returnHomePage.addEventListener("click", function () {
-    window.location.assign("/homePage.html");
-  }, true);
+  returnHomePage.addEventListener(
+    "click",
+    function () {
+      window.location.assign("/homePage.html");
+    },
+    true
+  );
 }
 if (isElementNotEqualToNull(randomPasswordButton)) {
   randomPasswordButton.addEventListener("click", function () {
@@ -91,7 +94,6 @@ if (isElementNotEqualToNull(confirmPassword)) {
     } else {
       doesPasswordsmatch.innerHTML = "don't match";
       doesPasswordsmatch.style.color = "red";
-
     }
   });
 }
@@ -110,6 +112,7 @@ if (isElementNotEqualToNull(checkboxConfirmPassword)) {
 }
 
 function generatePassword() {
+  let passwordList = new Map();
   displayPassword.innerHTML = "";
   let charactersPickedByUsers = [];
   let arrayPickedByUser = [];
@@ -176,15 +179,12 @@ function generatePassword() {
     } else {
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      let shuffledPassword = shuffleArray(Array.from(firstPartpassword));
-      displayPassword.innerHTML = shuffledPassword.join("");
-      passwordList.set("userPassword", shuffledPassword.join(""));
-      console.log(passwordList)
+      let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join("");
+      displayPassword.innerHTML = shuffledPassword;
+      passwordList.set("userPassword", shuffledPassword);
+      console.log(passwordList);
     }
   }, 75);
-
-
-  
 }
 
 function incrementCircularProgressBar(count, color) {
