@@ -15,7 +15,7 @@ import {
   password,
   confirmPassword,
   doesPasswordsmatch,
-  retunrHomePage,
+  returnHomePage,
 } from "./createPassword.js";
 import {
   goToHomePage,
@@ -50,10 +50,10 @@ if (isElementNotEqualToNull(createPasswordButton)) {
     window.location.assign("/createPassword.html");
   });
 }
-if (isElementNotEqualToNull(retunrHomePage)) {
-  retunrHomePage.addEventListener("click", function () {
+if (isElementNotEqualToNull(returnHomePage)) {
+  returnHomePage.addEventListener("click", function () {
     window.location.assign("/homePage.html");
-  });
+  }, true);
 }
 if (isElementNotEqualToNull(randomPasswordButton)) {
   randomPasswordButton.addEventListener("click", function () {
@@ -90,6 +90,7 @@ if (isElementNotEqualToNull(confirmPassword)) {
     } else {
       doesPasswordsmatch.innerHTML = "don't match";
       doesPasswordsmatch.style.color = "red";
+
     }
   });
 }
