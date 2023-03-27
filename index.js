@@ -40,10 +40,9 @@ const lowerCaseLetters = [...Array(26)].map((_, i) =>
 const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
+let passwordList = new Map();
 
 let lengthPassword, counter;
-let firstPartpassword = "";
-
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
     window.location.assign("/createPassword.html");
@@ -111,9 +110,10 @@ if (isElementNotEqualToNull(checkboxConfirmPassword)) {
 }
 
 function generatePassword() {
-  let passwordList = new Map();
-  displayPassword.innerHTML = "";
   let charactersPickedByUsers = [];
+  let firstPartpassword = "";
+  displayPassword.innerHTML = "";
+ 
   let arrayPickedByUser = [];
   let length = range.value;
 
@@ -139,7 +139,6 @@ function generatePassword() {
       processUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
     }
   }
-
   generateFirstPartPassword();
   let hasValueTrue = checkboxPasswordsArray.find(
     (element) => element.checked === true
@@ -181,11 +180,19 @@ function generatePassword() {
         counter * CONVERT_TO_DEGRESS
       }deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
     } else {
+      let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join("");
+      function checkPassword() {
+        if (passwordList.get(shuffledPassword)) {
+          generateFirstPartPassword();
+          checkPassword();
+        } else {
+          displayPassword.innerHTML = shuffledPassword;
+          passwordList.set(shuffledPassword, true);
+        }
+      }
+      checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join(
-        ""
-      );
       displayPassword.innerHTML = shuffledPassword;
       passwordList.set("userPassword", shuffledPassword);
       console.log(passwordList);
