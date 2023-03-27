@@ -44,7 +44,6 @@ const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let lengthPassword, counter;
 let firstPartpassword = "";
 
-
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
     window.location.assign("/createPassword.html");
@@ -117,26 +116,31 @@ function generatePassword() {
   let charactersPickedByUsers = [];
   let arrayPickedByUser = [];
   let length = range.value;
-  if (smallCapCheckBox.checked) {
-    processUserChoices(
-      lowerCaseLetters,
-      charactersPickedByUsers,
-      arrayPickedByUser
-    );
+
+  function generateFirstPartPassword() {
+    if (smallCapCheckBox.checked) {
+      processUserChoices(
+        lowerCaseLetters,
+        charactersPickedByUsers,
+        arrayPickedByUser
+      );
+    }
+    if (upperCaseCheckBox.checked) {
+      processUserChoices(
+        upperCaseLetters,
+        charactersPickedByUsers,
+        arrayPickedByUser
+      );
+    }
+    if (numberCheckBox.checked) {
+      processUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
+    }
+    if (symbolCheckBox.checked) {
+      processUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
+    }
   }
-  if (upperCaseCheckBox.checked) {
-    processUserChoices(
-      upperCaseLetters,
-      charactersPickedByUsers,
-      arrayPickedByUser
-    );
-  }
-  if (numberCheckBox.checked) {
-    processUserChoices(numbers, charactersPickedByUsers, arrayPickedByUser);
-  }
-  if (symbolCheckBox.checked) {
-    processUserChoices(symbols, charactersPickedByUsers, arrayPickedByUser);
-  }
+
+  generateFirstPartPassword();
   let hasValueTrue = checkboxPasswordsArray.find(
     (element) => element.checked === true
   );
@@ -179,7 +183,9 @@ function generatePassword() {
     } else {
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join("");
+      let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join(
+        ""
+      );
       displayPassword.innerHTML = shuffledPassword;
       passwordList.set("userPassword", shuffledPassword);
       console.log(passwordList);
