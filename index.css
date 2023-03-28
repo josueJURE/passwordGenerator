@@ -109,9 +109,28 @@ button:hover {
   position: relative;
 }
 
+
+
 #displayPassword {
   background-color: #ddd;
+  height: 100%;
+  width: 100%;
+  /* position: relative; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
+
+
+/* 
+.fa-lock {
+  margin-left: 0;
+}
+.fa-edit {
+  margin-right: 0;
+} */
 
 /* i {
   background-color: #ddd;
@@ -172,9 +191,9 @@ input {
   background-color: #fff;
 }
 
-.fas {
+/* .fas {
   transform: translateY(-10px);
-}
+} */
 
 .slidesInFromRight {
   animation: expandFromRigth 1.2s ease forwards;
