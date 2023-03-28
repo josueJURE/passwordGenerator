@@ -32,6 +32,15 @@ import {
   progressText,
 } from "./generatePassword.js";
 
+/* code bar 28.3.23 issue with 
+* why I'm seeing folders when opening project
+*returnHomePage.disabled = false;
+*mobile first;
+*hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
+
+
+*/
+
 // create variables
 const CONVERT_TO_DEGRESS = 3.6;
 const lowerCaseLetters = [...Array(26)].map((_, i) =>

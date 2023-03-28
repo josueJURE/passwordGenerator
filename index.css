@@ -113,7 +113,7 @@ button:hover {
   background-color: #ddd;
 }
 
-i {
+/* i {
   background-color: #ddd;
   position: absolute;
   top: 50%;
@@ -121,7 +121,7 @@ i {
   transform: translateY(-80%);
   font-size: 1.2rem;
   color: #555;
-}
+} */
 
 .myBar {
     width: 0%;
