@@ -46,5 +46,7 @@ function calculateUserPasswordStrength(length) {
 
 
 
+
+
 export {shuffleArray, processUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, calculateUserPasswordStrength}
 

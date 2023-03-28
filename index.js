@@ -235,3 +235,11 @@ function incrementCircularProgressBar(count, color) {
     count * 3.6
   }deg, white ${count * 3.6}deg)`;
 }
+
+displayPassword.addEventListener("click", function(e) {
+  let target = e.target
+  if(target.classList.contains("fa-edit")) {
+    console.log("josué")
+    displayPassword.contenteditable="true"
+  }
+}) 
