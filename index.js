@@ -89,6 +89,7 @@ if (isElementNotEqualToNull(confirmPassword)) {
       doesPasswordsmatch.classList.remove("displayNone");
       doesPasswordsmatch.style.color = "green";
       doesPasswordsmatch.innerHTML = "match";
+      returnHomePage.disabled = false;
     } else {
       doesPasswordsmatch.innerHTML = "don't match";
       doesPasswordsmatch.style.color = "red";
