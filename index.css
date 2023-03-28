@@ -124,13 +124,10 @@ button:hover {
 }
 
 
-/* 
-.fa-lock {
-  margin-left: 0;
+
+#displayPassword > i {
+  background: transparent;
 }
-.fa-edit {
-  margin-right: 0;
-} */
 
 /* i {
   background-color: #ddd;

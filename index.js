@@ -36,6 +36,7 @@ import {
 * why I'm seeing folders when opening project
 *returnHomePage.disabled = false;
 *mobile first;
+*position icons on GeneratePassword.html page
 *hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
 
 
