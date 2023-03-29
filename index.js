@@ -31,10 +31,10 @@ import {
   showPassword,
   progressText,
 } from "./generatePassword.js";
-const editIcon = document.querySelector("fa-edit");
+
 
 /* code bar 28.3.23 issue with 
-* why I'm seeing folders when opening project
+*displayPassword.addEventListener() contentEditable attribute doesn't become true;
 *returnHomePage.disabled = false;
 * password not centered after progress bar has completed and icons dissapear 
 * event listener on displayPassword not toggling contenteditable="false" to true
@@ -216,7 +216,7 @@ function generatePassword() {
       firstPartpassword += secondPartPassword;
       displayPassword.innerHTML = `
       <i class="fas fa-lock"></i>
-      <div class="transparent">${shuffledPassword}</>
+      <div class="transparent">${shuffledPassword}</div>
       <i class=" transparent fas fa-edit"></i>`
       passwordList.set("userPassword", shuffledPassword);
       console.log(passwordList);

@@ -1,10 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    font-family: 'Open Sans', sans-serif;
-    background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  background-color: aliceblue;
 }
 
 .rangePassword {
@@ -69,61 +69,55 @@ progress {
   margin-bottom: 50px;
 }
 
-button:hover { 
+button:hover {
   scale: 1.1;
 }
 
 .container {
-    width: 50%;
-    height: 10px;
-    padding: 1rem 1rem 1rem 3rem;
-    background-color: #ddd;
-    border: none;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  width: 50%;
+  height: 10px;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: #ddd;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .writePassword {
-    margin-bottom: 10px;
-  }
-  
-  input {
-    text-align: center;
-  }
+.writePassword {
+  margin-bottom: 10px;
+}
 
-  .input-group {
-    width: 28rem;
-    height: 1rem;
-    padding: 1rem 1rem 1rem 3rem;
-    background-color: #ddd;
-    border: none;
-    border-radius: 0.5rem;
-    margin-bottom: 12px;
-    text-align: center;
-  }
+input {
+  text-align: center;
+}
 
+.input-group {
+  width: 28rem;
+  height: 1rem;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: #ddd;
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
 
 .positionRelative {
   position: relative;
 }
 
-
-
 #displayPassword {
   background-color: #ddd;
   height: 100%;
   width: 100%;
-  /* position: relative; */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
 }
-
-
 
 #displayPassword > i {
   background: transparent;
@@ -133,20 +127,10 @@ button:hover {
   background: transparent;
 }
 
-/* i {
-  background-color: #ddd;
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-80%);
-  font-size: 1.2rem;
-  color: #555;
-} */
-
 .myBar {
-    width: 0%;
-    height: 100%;
-    background-color: green;
+  width: 0%;
+  height: 100%;
+  background-color: green;
 }
 
 input {
@@ -164,7 +148,7 @@ input {
   background: aliceblue;
 }
 
-.circleContainer  {
+.circleContainer {
   height: 80%;
   width: 80%;
   background: gray;
@@ -172,7 +156,7 @@ input {
   position: relative;
 }
 
-.circle2  {
+.circle2 {
   height: 80%;
   width: 80%;
   background: white;
@@ -192,33 +176,29 @@ input {
   background-color: #fff;
 }
 
-/* .fas {
-  transform: translateY(-10px);
-} */
-
 .slidesInFromRight {
   animation: expandFromRigth 1.2s ease forwards;
   transition: all 1s ease;
 }
 
- .slidesInFromLeft {
-  animation: expandFromLeft  1.2s ease forwards;
+.slidesInFromLeft {
+  animation: expandFromLeft 1.2s ease forwards;
   transition: all 1s ease;
- }
+}
 
- .slidesInFromBottom {
+.slidesInFromBottom {
   animation: expandFromBottom 1.2s ease forwards;
   transition: all 1.4 ease;
- }
+}
 
- @keyframes expandFromBottom {
+@keyframes expandFromBottom {
   0% {
     transform: translateY(1400px);
   }
   100% {
     transform: translateY(0px);
   }
- }
+}
 
 @keyframes expandFromRigth {
   0% {
