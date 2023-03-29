@@ -31,12 +31,16 @@ import {
   showPassword,
   progressText,
 } from "./generatePassword.js";
+const editIcon = document.querySelector("fa-edit")
 
 /* code bar 28.3.23 issue with 
 * why I'm seeing folders when opening project
 *returnHomePage.disabled = false;
+* password not centered after progress bar has completed and icons dissapear 
+* event listener on displayPassword not toggling contenteditable="false" to true
 *mobile first;
 *position icons on GeneratePassword.html page
+*audio files
 *hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
 
 
@@ -62,7 +66,7 @@ if (isElementNotEqualToNull(returnHomePage)) {
   returnHomePage.addEventListener(
     "click",
     function () {
-      window.location.assign("/homePage.html");
+      window.location.assign("/index.html");
     },
     true
   );
@@ -74,7 +78,7 @@ if (isElementNotEqualToNull(randomPasswordButton)) {
 }
 if (isElementNotEqualToNull(goToHomePage)) {
   goToHomePage.addEventListener("click", function () {
-    window.location.assign("/homePage.html");
+    window.location.assign("/index.html");
   });
 }
 if (isElementNotEqualToNull(form)) {
@@ -99,7 +103,7 @@ if (isElementNotEqualToNull(confirmPassword)) {
       doesPasswordsmatch.classList.remove("displayNone");
       doesPasswordsmatch.style.color = "green";
       doesPasswordsmatch.innerHTML = "match";
-      returnHomePage.disabled = false;
+      // returnHomePage.disabled = false;
     } else {
       doesPasswordsmatch.innerHTML = "don't match";
       doesPasswordsmatch.style.color = "red";
@@ -125,7 +129,7 @@ function generatePassword() {
   let firstPartpassword = "";
   displayPassword.innerHTML = "";
   let secondPartPassword;
- 
+
   let arrayPickedByUser = [];
   let length = range.value;
 
@@ -157,12 +161,11 @@ function generatePassword() {
       return charactersPickedByUsers.indexOf(val) == -1;
     });
     lengthPassword = firstPartpassword.length;
-      let secondPartPassword = createRestOfPassword(
+    let secondPartPassword = createRestOfPassword(
       length - firstPartpassword.length,
       arrayPickedByUser
     );
-    firstPartpassword += secondPartPassword
-
+    firstPartpassword += secondPartPassword;
   }
   generateFirstPartPassword();
   let hasValueTrue = checkboxPasswordsArray.find(
@@ -196,7 +199,9 @@ function generatePassword() {
         counter * CONVERT_TO_DEGRESS
       }deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
     } else {
-      let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join("");
+      let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join(
+        ""
+      );
       function checkPassword() {
         if (passwordList.get(shuffledPassword)) {
           generateFirstPartPassword();
@@ -209,7 +214,7 @@ function generatePassword() {
       checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      displayPassword.innerHTML = shuffledPassword;
+      displayPassword.innerHTML = '<i class="fas fa-lock" />'+shuffledPassword+'<i class="fas fa-edit" />';
       passwordList.set("userPassword", shuffledPassword);
       console.log(passwordList);
     }
@@ -236,10 +241,12 @@ function incrementCircularProgressBar(count, color) {
   }deg, white ${count * 3.6}deg)`;
 }
 
-displayPassword.addEventListener("click", function(e) {
-  let target = e.target
-  if(target.classList.contains("fa-edit")) {
-    console.log("josué")
-    displayPassword.contenteditable="true"
+displayPassword.addEventListener("click", function (e) {
+  let target = e.target;
+  if (target.classList.contains("fa-edit")) {
+    console.log("josué");
+    displayPassword.contenteditable = "true";
   }
-}) 
+});
+
+
