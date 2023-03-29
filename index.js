@@ -31,7 +31,7 @@ import {
   showPassword,
   progressText,
 } from "./generatePassword.js";
-const editIcon = document.querySelector("fa-edit")
+const editIcon = document.querySelector("fa-edit");
 
 /* code bar 28.3.23 issue with 
 * why I'm seeing folders when opening project
@@ -214,7 +214,10 @@ function generatePassword() {
       checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      displayPassword.innerHTML = '<i class="fas fa-lock" />'+shuffledPassword+'<i class="fas fa-edit" />';
+      displayPassword.innerHTML = `
+      <i class="fas fa-lock"></i>
+      <div class="transparent">${shuffledPassword}</>
+      <i class=" transparent fas fa-edit"></i>`
       passwordList.set("userPassword", shuffledPassword);
       console.log(passwordList);
     }
@@ -248,5 +251,3 @@ displayPassword.addEventListener("click", function (e) {
     displayPassword.contenteditable = "true";
   }
 });
-
-

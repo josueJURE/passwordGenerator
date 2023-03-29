@@ -129,6 +129,10 @@ button:hover {
   background: transparent;
 }
 
+.transparent {
+  background: transparent;
+}
+
 /* i {
   background-color: #ddd;
   position: absolute;
