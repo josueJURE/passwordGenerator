@@ -5,7 +5,7 @@ import {
   isElementNotEqualToNull,
   createRestOfPassword,
   calculateUserPasswordStrength,
-} from "./function.js";
+} from "./utilities/function.js";
 import { createPasswordButton, randomPasswordButton } from "./homePage.js";
 import {
   capLockOn,
@@ -16,7 +16,7 @@ import {
   confirmPassword,
   doesPasswordsmatch,
   returnHomePage,
-} from "./createPassword.js";
+} from "./utilities/createPassword.js";
 import {
   goToHomePage,
   form,
@@ -30,20 +30,22 @@ import {
   displayPassword,
   showPassword,
   progressText,
-} from "./generatePassword.js";
-
+} from "./utilities/generatePassword.js";
 
 /* code bar 28.3.23 issue with 
+*folders 
 *displayPassword.addEventListener() contentEditable attribute doesn't become true;
-*returnHomePage.disabled = false;
-* password not centered after progress bar has completed and icons dissapear 
+
+* problems with icons marin on #displayPassword
 * event listener on displayPassword not toggling contenteditable="false" to true
 *mobile first;
-*position icons on GeneratePassword.html page
+* can   if (hasValueTrue === undefined) {
+    alert("tick at least one box");
+    return;
+  }
+  be refactored as a function
 *audio files
-*hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
-
-
+*returnHomePage.disabled = false;
 */
 
 // create variables
@@ -216,8 +218,8 @@ function generatePassword() {
       firstPartpassword += secondPartPassword;
       displayPassword.innerHTML = `
       <i class="fas fa-lock"></i>
-      <div class="transparent">${shuffledPassword}</div>
-      <i class=" transparent fas fa-edit"></i>`
+      <div class="transparent" contenteditable="false">${shuffledPassword}</div>
+      <i class=" transparent fas fa-edit"></i>`;
       passwordList.set("userPassword", shuffledPassword);
       console.log(passwordList);
     }
@@ -248,6 +250,6 @@ displayPassword.addEventListener("click", function (e) {
   let target = e.target;
   if (target.classList.contains("fa-edit")) {
     console.log("josué");
-    displayPassword.contenteditable = "true";
+    document.querySelectorAll(".transparent")[1].contenteditable = true;
   }
 });
