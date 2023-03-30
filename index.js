@@ -54,7 +54,9 @@ const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let passwordList = new Map();
 let lengthPassword, counter;
+const currentYear = new Date().getFullYear
 
+footer.innerHTML = currentYear
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
     window.location.assign("/createPassword.html");
@@ -252,6 +254,8 @@ function incrementCircularProgressBar(count, color) {
     count * 3.6
   }deg, white ${count * 3.6}deg)`;
 }
+
+
 
 
 

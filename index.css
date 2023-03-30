@@ -67,8 +67,11 @@ button {
 footer {
   height: 50px;
   width: 100%;
-  border-top: #3aaf9f;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(58, 175, 159);
+  border-radius: 5px;
 }
 
 progress {
