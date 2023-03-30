@@ -104,6 +104,11 @@ input {
   text-align: center;
 }
 
+.input-group > i {
+  background: transparent;
+  margin-right: 10px;
+}
+
 .positionRelative {
   position: relative;
 }
