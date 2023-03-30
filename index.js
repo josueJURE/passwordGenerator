@@ -5,8 +5,8 @@ import {
   isElementNotEqualToNull,
   createRestOfPassword,
   calculateUserPasswordStrength,
-} from "./utilities/function.js";
-import { createPasswordButton, randomPasswordButton } from "./homePage.js";
+} from "./function.js";
+import { createPasswordButton, randomPasswordButton } from "./utilities/homePage.js";
 import {
   capLockOn,
   checkboxPassword,
@@ -73,6 +73,7 @@ if (isElementNotEqualToNull(returnHomePage)) {
     true
   );
 }
+
 if (isElementNotEqualToNull(randomPasswordButton)) {
   randomPasswordButton.addEventListener("click", function () {
     window.location.assign("/generatePassword.html");
@@ -124,6 +125,16 @@ if (isElementNotEqualToNull(checkboxPassword)) {
 }
 if (isElementNotEqualToNull(checkboxConfirmPassword)) {
   checkboxConfirmPassword.addEventListener("change", switchPasswordType);
+}
+if (isElementNotEqualToNull(displayPassword)) {
+  displayPassword.addEventListener("click", function (e) {
+    let target = e.target;
+    if (target.classList.contains("fa-edit")) {
+      console.log(document.querySelectorAll(".transparent")[0]);
+      console.log("josué");
+      document.querySelectorAll(".transparent")[0].setAttribute("contenteditable", true);
+    }
+  });
 }
 
 function generatePassword() {
@@ -216,14 +227,15 @@ function generatePassword() {
       checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
+      displayPassword.innerHTML = shuffledPassword
      
 
-      displayPassword.innerHTML = `
-      <i class="fas fa-lock"></i>
-      <div class="transparent" contenteditable="false">${shuffledPassword}</div>
-      <i class="transparent fas fa-edit"></i>`;
-      passwordList.set("userPassword", shuffledPassword);
-      console.log(passwordList);
+      // displayPassword.innerHTML = `
+      // <i class="fas fa-lock"></i>
+      // <div class="transparent" contenteditable="false">${shuffledPassword}</div>
+      // <i class="transparent fas fa-edit"></i>`;
+      // passwordList.set("userPassword", shuffledPassword);
+     
     }
   }, 75);
 }
@@ -248,11 +260,24 @@ function incrementCircularProgressBar(count, color) {
   }deg, white ${count * 3.6}deg)`;
 }
 
-displayPassword.addEventListener("click", function (e) {
-  let target = e.target;
-  if (target.classList.contains("fa-edit")) {
-    console.log(document.querySelectorAll(".transparent")[0]);
-    console.log("josué");
-    document.querySelectorAll(".transparent")[0].setAttribute("contenteditable", true);
-  }
-});
+// displayPassword.addEventListener("click", function (e) {
+//   let target = e.target;
+//   if (target.classList.contains("fa-edit")) {
+//     console.log(document.querySelectorAll(".transparent")[0]);
+//     console.log("josué");
+//     document.querySelectorAll(".transparent")[0].setAttribute("contenteditable", true);
+//   }
+// });
+
+// returnHomePage.addEventListener(
+//   "click",
+//   function () {
+//     console.log("Hi")
+//     window.location.assign("/index.html");
+//   },
+//   true
+// );
+
+
+
+
