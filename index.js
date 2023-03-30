@@ -5,8 +5,8 @@ import {
   isElementNotEqualToNull,
   createRestOfPassword,
   calculateUserPasswordStrength,
-} from "./function.js";
-import { createPasswordButton, randomPasswordButton } from "./utilities/homePage.js";
+} from "./jsUtilities/function.js";
+import { createPasswordButton, randomPasswordButton } from "./jsUtilities/homePage.js";
 import {
   capLockOn,
   checkboxPassword,
@@ -16,7 +16,7 @@ import {
   confirmPassword,
   doesPasswordsmatch,
   returnHomePage,
-} from "./utilities/createPassword.js";
+} from "./jsUtilities/createPassword.js";
 import {
   goToHomePage,
   form,
@@ -30,22 +30,18 @@ import {
   displayPassword,
   showPassword,
   progressText,
-} from "./utilities/generatePassword.js";
+} from "./jsUtilities/generatePassword.js";
 
 /* code bar 28.3.23 issue with 
-*folders 
-*displayPassword.addEventListener() contentEditable attribute doesn't become true;
-
-* problems with icons marin on #displayPassword
-* event listener on displayPassword not toggling contenteditable="false" to true
+* issue whem moving html files into htmlUtilities folder 
 *mobile first;
+*refactor 12if statements with isElementNotEqualToNull()
 * can   if (hasValueTrue === undefined) {
     alert("tick at least one box");
     return;
   }
   be refactored as a function
 *audio files
-*returnHomePage.disabled = false;
 */
 
 // create variables
@@ -57,8 +53,8 @@ const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let passwordList = new Map();
-
 let lengthPassword, counter;
+
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
     window.location.assign("/createPassword.html");
@@ -106,7 +102,7 @@ if (isElementNotEqualToNull(confirmPassword)) {
       doesPasswordsmatch.classList.remove("displayNone");
       doesPasswordsmatch.style.color = "green";
       doesPasswordsmatch.innerHTML = "match";
-      // returnHomePage.disabled = false;
+
     } else {
       doesPasswordsmatch.innerHTML = "don't match";
       doesPasswordsmatch.style.color = "red";

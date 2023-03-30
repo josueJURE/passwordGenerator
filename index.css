@@ -64,6 +64,13 @@ button {
   display: none;
 }
 
+footer {
+  height: 50px;
+  width: 100%;
+  border-top: #3aaf9f;
+
+}
+
 progress {
   width: 50%;
   margin-bottom: 50px;

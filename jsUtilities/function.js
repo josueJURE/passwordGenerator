@@ -31,6 +31,35 @@ function isElementNotEqualToNull(element) {
   return element !== null;
 }
 
+function doElementsReturnNull() {
+  if (isElementNotEqualToNull(createPasswordButton)) {
+    createPasswordButton.addEventListener("click", function () {
+      window.location.assign("/createPassword.html");
+    });
+  }
+  if (isElementNotEqualToNull(returnHomePage)) {
+    returnHomePage.addEventListener(
+      "click",
+      function () {
+        window.location.assign("/index.html");
+      },
+      true
+    );
+  }
+  if (isElementNotEqualToNull(randomPasswordButton)) {
+    randomPasswordButton.addEventListener("click", function () {
+      window.location.assign("/generatePassword.html");
+    });
+  }
+  if (isElementNotEqualToNull(goToHomePage)) {
+    goToHomePage.addEventListener("click", function () {
+      window.location.assign("/index.html");
+    });
+  }
+  
+
+}
+
 function createRestOfPassword(length, arrayPickedByUser) {
   let result = "";
   for (var i = 0; i < length; i++) {
