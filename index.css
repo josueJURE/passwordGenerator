@@ -108,9 +108,9 @@ input {
   position: relative;
 }
 
-.fa-lock {
+/* .fa-lock {
   margin-right: 0;
-}
+} */
 
 #displayPassword {
   background-color: #ddd;
@@ -129,10 +129,10 @@ input {
   width: 10px;
 }
 
-#displayPassword:nth-child(2) {
+/* #displayPassword:nth-child(2) {
   height: 100%;
   width: 100%;
-}
+} */
 
 .transparent {
   background: transparent;

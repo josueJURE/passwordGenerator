@@ -216,10 +216,12 @@ function generatePassword() {
       checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
+     
+
       displayPassword.innerHTML = `
       <i class="fas fa-lock"></i>
       <div class="transparent" contenteditable="false">${shuffledPassword}</div>
-      <i class=" transparent fas fa-edit"></i>`;
+      <i class="transparent fas fa-edit"></i>`;
       passwordList.set("userPassword", shuffledPassword);
       console.log(passwordList);
     }
@@ -249,7 +251,8 @@ function incrementCircularProgressBar(count, color) {
 displayPassword.addEventListener("click", function (e) {
   let target = e.target;
   if (target.classList.contains("fa-edit")) {
+    console.log(document.querySelectorAll(".transparent")[0]);
     console.log("josué");
-    document.querySelectorAll(".transparent")[1].contenteditable = true;
+    document.querySelectorAll(".transparent")[0].setAttribute("contenteditable", true);
   }
 });
