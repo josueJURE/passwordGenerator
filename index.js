@@ -54,9 +54,10 @@ const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let passwordList = new Map();
 let lengthPassword, counter;
-const currentYear = new Date().getFullYear
+const currentYear = new Date().getFullYear()
 
-footer.innerHTML = currentYear
+footer.innerHTML = `Generate Password Company ${currentYear}. All Rights Reserved`
+
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
     window.location.assign("/createPassword.html");
