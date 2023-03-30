@@ -6,7 +6,7 @@ import {
   createRestOfPassword,
   calculateUserPasswordStrength,
 } from "./jsUtilities/function.js";
-import { createPasswordButton, randomPasswordButton } from "./jsUtilities/homePage.js";
+import { createPasswordButton, randomPasswordButton, footer } from "./jsUtilities/homePage.js";
 import {
   capLockOn,
   checkboxPassword,
@@ -54,9 +54,11 @@ const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let passwordList = new Map();
 let lengthPassword, counter;
-const currentYear = new Date().getFullYear()
 
-footer.innerHTML = `Generate Password Company ${currentYear}. All Rights Reserved`
+if(isElementNotEqualToNull(footer)) {
+  footer
+}
+
 
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
