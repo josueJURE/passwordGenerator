@@ -228,12 +228,8 @@ function generatePassword() {
       checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      displayPassword.innerHTML = `
-      <i class="fas fa-lock"></i>
-      <div class="transparent" contenteditable="false">${shuffledPassword}</div>
-      <i class="transparent fas fa-edit"></i>`;
+      displayPassword.innerHTML = reInjectElementParentContainer(shuffledPassword);
       passwordList.set("userPassword", shuffledPassword);
-     
     }
   }, 75);
 }
@@ -256,6 +252,12 @@ function incrementCircularProgressBar(count, color) {
   circleContainer.style.background = `conic-gradient(${color} ${
     count * 3.6
   }deg, white ${count * 3.6}deg)`;
+}
+
+function reInjectElementParentContainer(element) {
+  return `<i class="fas fa-lock"></i>
+  <div class="transparent" contenteditable="false">${element}</div>
+  <i class="transparent fas fa-edit"></i>`
 }
 
 
