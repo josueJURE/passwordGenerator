@@ -235,24 +235,6 @@ function generatePassword() {
   }, 75);
 }
 
-// function incrementCircularProgressBar(count, color) {
-//   if (count <= 25) {
-//     color = "red";
-//   } else if (count > 25 && count <= 50) {
-//     color = "orange";
-//   } else if (count > 50 && count <= 75) {
-//     color = "#DADD98";
-//   } else {
-//     color = "green";
-//   }
-//   circleContainer.style.background = `conic-gradient(${color} 0deg, ${color} ${
-//     count * 3.6
-//   }deg, ${color} ${count * 3.6}deg, ${color} ${count * 3.6}deg, ${color} ${
-//     count * 3.6
-//   }deg);`;
-//   circleContainer.style.background = `conic-gradient(${color} ${
-//     count * 3.6
-//   }deg, white ${count * 3.6}deg)`;
-// }
+
 
 
