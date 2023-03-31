@@ -5,8 +5,13 @@ import {
   isElementNotEqualToNull,
   createRestOfPassword,
   calculateUserPasswordStrength,
+  reInjectElementsInParentContainer
 } from "./jsUtilities/function.js";
-import { createPasswordButton, randomPasswordButton, footer } from "./jsUtilities/homePage.js";
+import {
+  createPasswordButton,
+  randomPasswordButton,
+  footer,
+} from "./jsUtilities/homePage.js";
 import {
   capLockOn,
   checkboxPassword,
@@ -55,10 +60,9 @@ const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let passwordList = new Map();
 let lengthPassword, counter;
 
-if(isElementNotEqualToNull(footer)) {
-  footer
+if (isElementNotEqualToNull(footer)) {
+  footer;
 }
-
 
 if (isElementNotEqualToNull(createPasswordButton)) {
   createPasswordButton.addEventListener("click", function () {
@@ -107,7 +111,6 @@ if (isElementNotEqualToNull(confirmPassword)) {
       doesPasswordsmatch.classList.remove("displayNone");
       doesPasswordsmatch.style.color = "green";
       doesPasswordsmatch.innerHTML = "match";
-
     } else {
       doesPasswordsmatch.innerHTML = "don't match";
       doesPasswordsmatch.style.color = "red";
@@ -133,7 +136,9 @@ if (isElementNotEqualToNull(displayPassword)) {
     if (target.classList.contains("fa-edit")) {
       console.log(document.querySelectorAll(".transparent")[0]);
       console.log("josué");
-      document.querySelectorAll(".transparent")[0].setAttribute("contenteditable", true);
+      document
+        .querySelectorAll(".transparent")[0]
+        .setAttribute("contenteditable", true);
     }
   });
 }
@@ -228,7 +233,8 @@ function generatePassword() {
       checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      displayPassword.innerHTML = reInjectElementParentContainer(shuffledPassword);
+      displayPassword.innerHTML =
+        reInjectElementsInParentContainer(shuffledPassword);
       passwordList.set("userPassword", shuffledPassword);
     }
   }, 75);
@@ -253,17 +259,5 @@ function incrementCircularProgressBar(count, color) {
     count * 3.6
   }deg, white ${count * 3.6}deg)`;
 }
-
-function reInjectElementParentContainer(element) {
-  return `<i class="fas fa-lock"></i>
-  <div class="transparent" contenteditable="false">${element}</div>
-  <i class="transparent fas fa-edit"></i>`
-}
-
-
-
-
-
-
 
 

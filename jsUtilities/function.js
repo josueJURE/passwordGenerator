@@ -44,9 +44,15 @@ function calculateUserPasswordStrength(length) {
     return length * 25;
 }
 
+function reInjectElementsInParentContainer(element) {
+  return `<i class="fas fa-lock"></i>
+  <div class="transparent" contenteditable="false">${element}</div>
+  <i class="transparent fas fa-edit"></i>`;
+}
 
 
 
 
-export {shuffleArray, processUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, calculateUserPasswordStrength}
+
+export {shuffleArray, processUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, calculateUserPasswordStrength, reInjectElementsInParentContainer}
 
