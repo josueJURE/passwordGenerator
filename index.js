@@ -213,11 +213,6 @@ function generatePassword() {
       console.log(counter);
       progressText.innerHTML = `password strenght ${counter}%`;
       incrementCircularProgressBar(counter, circleContainer);
-      circleContainer.style.background = `conic-gradient(red 0deg, orange ${
-        counter * CONVERT_TO_DEGRESS
-      }deg, yellow ${counter * CONVERT_TO_DEGRESS}deg, green ${
-        counter * CONVERT_TO_DEGRESS
-      }deg, blue ${counter * CONVERT_TO_DEGRESS}deg);`;
     } else {
       let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join(
         ""
