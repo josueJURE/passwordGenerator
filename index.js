@@ -212,7 +212,7 @@ function generatePassword() {
       counter++;
       console.log(counter);
       progressText.innerHTML = `password strenght ${counter}%`;
-      incrementCircularProgressBar(counter, circleContainer);
+      incrementCircularProgressBar(counter, circleContainer, CONVERT_TO_DEGRESS);
     } else {
       let shuffledPassword = shuffleArray(Array.from(firstPartpassword)).join(
         ""

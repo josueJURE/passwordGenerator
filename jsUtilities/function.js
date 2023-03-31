@@ -49,7 +49,7 @@ function reInjectElementsInParentContainer(element) {
   <div class="transparent" contenteditable="false">${element}</div>
   <i class="transparent fas fa-edit"></i>`;
 }
-function incrementCircularProgressBar(count, element, color) {
+function incrementCircularProgressBar(count, element, ratio, color) {
   if (count <= 25) {
     color = "red";
   } else if (count > 25 && count <= 50) {
@@ -60,13 +60,13 @@ function incrementCircularProgressBar(count, element, color) {
     color = "green";
   }
   element.style.background = `conic-gradient(${color} 0deg, ${color} ${
-    count * 3.6
-  }deg, ${color} ${count * 3.6}deg, ${color} ${count * 3.6}deg, ${color} ${
-    count * 3.6
+    count * ratio
+  }deg, ${color} ${count * ratio}deg, ${color} ${count * ratio}deg, ${color} ${
+    count * ratio
   }deg);`;
   element.style.background = `conic-gradient(${color} ${
-    count * 3.6
-  }deg, white ${count * 3.6}deg)`;
+    count * ratio
+  }deg, white ${count * ratio}deg)`;
 }
 
 
