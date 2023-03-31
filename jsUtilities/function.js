@@ -49,10 +49,29 @@ function reInjectElementsInParentContainer(element) {
   <div class="transparent" contenteditable="false">${element}</div>
   <i class="transparent fas fa-edit"></i>`;
 }
+function incrementCircularProgressBar(count, element, color) {
+  if (count <= 25) {
+    color = "red";
+  } else if (count > 25 && count <= 50) {
+    color = "orange";
+  } else if (count > 50 && count <= 75) {
+    color = "#DADD98";
+  } else {
+    color = "green";
+  }
+  element.style.background = `conic-gradient(${color} 0deg, ${color} ${
+    count * 3.6
+  }deg, ${color} ${count * 3.6}deg, ${color} ${count * 3.6}deg, ${color} ${
+    count * 3.6
+  }deg);`;
+  element.style.background = `conic-gradient(${color} ${
+    count * 3.6
+  }deg, white ${count * 3.6}deg)`;
+}
 
 
 
 
 
-export {shuffleArray, processUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, calculateUserPasswordStrength, reInjectElementsInParentContainer}
+export {shuffleArray, processUserChoices, switchPasswordType, isElementNotEqualToNull,  createRestOfPassword, calculateUserPasswordStrength, reInjectElementsInParentContainer, incrementCircularProgressBar}
 

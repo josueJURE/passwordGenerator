@@ -5,7 +5,8 @@ import {
   isElementNotEqualToNull,
   createRestOfPassword,
   calculateUserPasswordStrength,
-  reInjectElementsInParentContainer
+  reInjectElementsInParentContainer,
+  incrementCircularProgressBar
 } from "./jsUtilities/function.js";
 import {
   createPasswordButton,
@@ -211,7 +212,7 @@ function generatePassword() {
       counter++;
       console.log(counter);
       progressText.innerHTML = `password strenght ${counter}%`;
-      incrementCircularProgressBar(counter);
+      incrementCircularProgressBar(counter, circleContainer);
       circleContainer.style.background = `conic-gradient(red 0deg, orange ${
         counter * CONVERT_TO_DEGRESS
       }deg, yellow ${counter * CONVERT_TO_DEGRESS}deg, green ${
@@ -233,31 +234,30 @@ function generatePassword() {
       checkPassword();
       clearInterval(circularProgressBarInterval);
       firstPartpassword += secondPartPassword;
-      displayPassword.innerHTML =
-        reInjectElementsInParentContainer(shuffledPassword);
+      displayPassword.innerHTML = reInjectElementsInParentContainer(shuffledPassword);
       passwordList.set("userPassword", shuffledPassword);
     }
   }, 75);
 }
 
-function incrementCircularProgressBar(count, color) {
-  if (count <= 25) {
-    color = "red";
-  } else if (count > 25 && count <= 50) {
-    color = "orange";
-  } else if (count > 50 && count <= 75) {
-    color = "#DADD98";
-  } else {
-    color = "green";
-  }
-  circleContainer.style.background = `conic-gradient(${color} 0deg, ${color} ${
-    count * 3.6
-  }deg, ${color} ${count * 3.6}deg, ${color} ${count * 3.6}deg, ${color} ${
-    count * 3.6
-  }deg);`;
-  circleContainer.style.background = `conic-gradient(${color} ${
-    count * 3.6
-  }deg, white ${count * 3.6}deg)`;
-}
+// function incrementCircularProgressBar(count, color) {
+//   if (count <= 25) {
+//     color = "red";
+//   } else if (count > 25 && count <= 50) {
+//     color = "orange";
+//   } else if (count > 50 && count <= 75) {
+//     color = "#DADD98";
+//   } else {
+//     color = "green";
+//   }
+//   circleContainer.style.background = `conic-gradient(${color} 0deg, ${color} ${
+//     count * 3.6
+//   }deg, ${color} ${count * 3.6}deg, ${color} ${count * 3.6}deg, ${color} ${
+//     count * 3.6
+//   }deg);`;
+//   circleContainer.style.background = `conic-gradient(${color} ${
+//     count * 3.6
+//   }deg, white ${count * 3.6}deg)`;
+// }
 
 
