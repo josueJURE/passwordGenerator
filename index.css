@@ -80,6 +80,8 @@ button {
   align-items: center;
   background-color: rgb(58, 175, 159);
   border-radius: 5px;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 progress {
