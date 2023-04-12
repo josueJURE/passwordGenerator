@@ -7,8 +7,6 @@
   background-color: aliceblue;
 }
 
-
-
 .rangePassword {
   width: 10px;
   height: 10px;
@@ -41,11 +39,13 @@
 }
 
 .displayFlexColumn {
-  width: 100%;
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  align-content: center;
+  gap: 10px;
 }
 
 #container {
@@ -62,7 +62,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: #fff;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   cursor: pointer;
 }
 
@@ -225,6 +225,14 @@ input {
 .slidesInFromBottom {
   animation: expandFromBottom 1.2s ease forwards;
   transition: all 1.4 ease;
+}
+
+.buttonContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 @keyframes expandFromBottom {
