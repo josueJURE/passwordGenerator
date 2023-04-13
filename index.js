@@ -63,23 +63,12 @@ let lengthPassword, counter;
 
 
 
-window.onload = () => {
-  const footer = document.getElementById("footer");
-  console.log("page is fully loaded");
-  console.log("hi")
+if (isElementNotEqualToNull(footer)) {
   function createDate() {
     const currentYear = new Date().getFullYear();
-    return currentYear
+    return currentYear;
   }
   footer.innerHTML = `Generate Password Company ${createDate()}. All right reserved`;
-};
-
-if (isElementNotEqualToNull(footer)) {
-  footer;
-
-
-
-
 }
 
 if (isElementNotEqualToNull(createPasswordButton)) {
