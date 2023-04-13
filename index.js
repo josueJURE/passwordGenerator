@@ -243,3 +243,5 @@ function generatePassword() {
     }
   }, 75);
 }
+
+displayPassword.addEventListener("click", editContent)
