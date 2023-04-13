@@ -61,8 +61,6 @@ const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let passwordList = new Map();
 let lengthPassword, counter;
 
-
-
 if (isElementNotEqualToNull(footer)) {
   function createDate() {
     const currentYear = new Date().getFullYear();
