@@ -69,16 +69,16 @@ if (isElementNotEqualToNull(footer)) {
   footer.innerHTML = `Generate Password Company ${createDate()}. All right reserved`;
 }
 
-if (isElementNotEqualToNull(createPasswordButton)) {
+if (createPasswordButton) {
   createPasswordButton.addEventListener("click", function () {
-    window.location.assign("/createPassword.html");
+    window.location.assign("createPassword.html");
   });
 }
 if (isElementNotEqualToNull(returnHomePage)) {
   returnHomePage.addEventListener(
     "click",
     function () {
-      window.location.assign("/index.html");
+      window.location.assign("index.html");
     },
     true
   );
@@ -86,7 +86,7 @@ if (isElementNotEqualToNull(returnHomePage)) {
 
 if (isElementNotEqualToNull(randomPasswordButton)) {
   randomPasswordButton.addEventListener("click", function () {
-    window.location.assign("/generatePassword.html");
+    window.location.assign("generatePassword.html");
   });
 }
 if (isElementNotEqualToNull(goToHomePage)) {
@@ -243,5 +243,3 @@ function generatePassword() {
     }
   }, 75);
 }
-
-
