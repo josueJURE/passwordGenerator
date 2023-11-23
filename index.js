@@ -91,7 +91,7 @@ if (isElementNotEqualToNull(randomPasswordButton)) {
 }
 if (isElementNotEqualToNull(goToHomePage)) {
   goToHomePage.addEventListener("click", function () {
-    window.location.assign("/index.html");
+    window.location.assign("index.html");
   });
 }
 if (isElementNotEqualToNull(form)) {
