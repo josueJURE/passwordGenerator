@@ -131,7 +131,6 @@ if (isElementNotEqualToNull(displayPassword)) {
     let target = e.target;
     if (target.classList.contains("fa-edit")) {
       console.log(document.querySelectorAll(".transparent")[0]);
-      console.log("josué");
       document
         .querySelectorAll(".transparent")[0]
         .setAttribute("contenteditable", true);
