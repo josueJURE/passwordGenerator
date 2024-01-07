@@ -38,17 +38,7 @@ import {
   progressText,
 } from "./jsUtilities/generatePassword.js";
 
-/* code bar 28.3.23 issue with 
-* issue whem moving html files into htmlUtilities folder 
-*mobile first;
-*refactor 12if statements with isElementNotEqualToNull()
-* can   if (hasValueTrue === undefined) {
-    alert("tick at least one box");
-    return;
-  }
-  be refactored as a function
-*audio files
-*/
+
 
 // create variables
 const CONVERT_TO_DEGRESS = 3.6;
@@ -200,16 +190,7 @@ function generatePassword() {
     alert("tick at least one box");
     return;
   }
-  // toggleElement(checkboxSection)
-  /* codebars 14/03/22. Code keeps running when using hasAtLeastOneCheckboxBeenTicked() is called.
-     'undefined' displayed in element with class displayPassworContainer.
-     on the other hand code below working find
-     if(hasValueTrue === undefined) {
-        alert("tick at least one box");
-        return
-    }
-     */
-  // hasAtLeastOneCheckboxBeenTicked(hasValueTrue)
+
 
   counter = 0;
   let circularProgressBarInterval = setInterval(() => {
