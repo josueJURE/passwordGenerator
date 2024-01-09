@@ -271,6 +271,14 @@ input {
   }
 }
 
+@media (max-width: 375px) {
+  .input-group {
+    width: 20rem;
+  }
+}
+
+
+
 
 
 
