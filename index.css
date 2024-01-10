@@ -290,7 +290,6 @@ input {
 }
 
 .test {
-  border: 1px red solid;
   height: 100vh;
   position: relative;
   overflow: hidden;
