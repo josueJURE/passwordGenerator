@@ -288,12 +288,10 @@ input {
   }
 }
 
-
-
-
-
-
 .test {
-  max-height: 500px;
+
 }
 
+form {
+  height: 100vh;
+}
