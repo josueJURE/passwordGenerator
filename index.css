@@ -70,7 +70,7 @@ button {
 }
 
 #footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   height: 50px;
   width: 100%;
@@ -279,7 +279,7 @@ input {
 
 @media (max-width: 375px) {
   .input-group {
-    width: 20rem;
+    width: 20rem
   }
 }
 
@@ -291,6 +291,12 @@ input {
 
 
 
-form {
+
+
+
+
+.test {
+  border: 1px red solid;
   height: 100vh;
+  position: relative;
 }
