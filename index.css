@@ -81,6 +81,8 @@ button {
   border-radius: 5px;
   text-transform: uppercase;
   color: #fff;
+  text-wrap: balance;
+  text-align: center;
 }
 
 progress {
@@ -160,7 +162,10 @@ input {
 
 .transparent {
   background: transparent;
+  width: 15rem;
+  text-align: center;
 }
+
 
 .myBar {
   width: 0%;
