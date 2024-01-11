@@ -7,6 +7,9 @@
   background-color: aliceblue;
 }
 
+
+
+
 .rangePassword {
   width: 10px;
   height: 10px;
@@ -48,10 +51,7 @@
   gap: 10px;
 }
 
-#container {
-  position: relative;
-  height: 100vh;
-}
+
 
 button {
   width: 16rem;
@@ -70,7 +70,7 @@ button {
 }
 
 #footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   height: 50px;
   width: 100%;
@@ -81,6 +81,8 @@ button {
   border-radius: 5px;
   text-transform: uppercase;
   color: #fff;
+  text-wrap: balance;
+  text-align: center;
 }
 
 progress {
@@ -92,8 +94,8 @@ button:hover {
   scale: 1.1;
 }
 
-.container {
-  width: 50%;
+ .container {
+  /* width: 50%; */
   height: 10px;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ddd;
@@ -102,7 +104,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
 .writePassword {
   margin-bottom: 10px;
@@ -160,7 +162,10 @@ input {
 
 .transparent {
   background: transparent;
+  width: 15rem;
+  text-align: center;
 }
+
 
 .myBar {
   width: 0%;
@@ -226,11 +231,17 @@ input {
   transition: all 1.4 ease;
 }
 
+
 .centerContainer {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 100vh;
 }
 
 @keyframes expandFromBottom {
@@ -258,4 +269,32 @@ input {
   100% {
     transform: translateX(0px);
   }
+}
+
+@media (max-width: 415px) {
+  .input-group {
+    width: 23rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .input-group {
+    width: 20rem
+  }
+}
+
+@media (max-width: 320px) {
+  .input-group {
+    width: 15rem;
+  }
+}
+
+.super-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+form {
+  margin-top: 100px;
 }
