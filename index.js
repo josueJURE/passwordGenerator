@@ -40,11 +40,15 @@ import {
 
 
 
+
+
 // create variables
 const CONVERT_TO_DEGRESS = 3.6;
 const lowerCaseLetters = [...Array(26)].map((_, i) =>
   String.fromCharCode(i + 97)
 );
+const clipboard = document.querySelector(".clipboard")
+
 const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
