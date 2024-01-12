@@ -289,12 +289,20 @@ input {
   }
 }
 
+@media (max-width: 280px) {
+  button {
+    height: 3.5rem;
+  }
+}
+
+
 .super-container {
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-form {
-  margin-top: 100px;
-}
+
+
+
+
