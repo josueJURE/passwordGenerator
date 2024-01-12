@@ -57,20 +57,17 @@ let lengthPassword, counter;
 // const copyText = document.querySelector(".transparent");
 
 
+if(clipboard) {
+  clipboard.addEventListener("change",  function copyDivToClipboard() {
+    var range = document.createRange();
+    range.selectNode(document.querySelector(".transparent"));
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();// to deselect
+  })
 
-clipboard.addEventListener("change",  function copyDivToClipboard() {
-  var range = document.createRange();
-  range.selectNode(document.querySelector(".transparent"));
-  window.getSelection().removeAllRanges(); // clear current selection
-  window.getSelection().addRange(range); // to select text
-  document.execCommand("copy");
-  window.getSelection().removeAllRanges();// to deselect
-})
-
-
-
-
-
+}
 
 
 if (isElementNotEqualToNull(footer)) {
