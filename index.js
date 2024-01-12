@@ -47,13 +47,31 @@ const CONVERT_TO_DEGRESS = 3.6;
 const lowerCaseLetters = [...Array(26)].map((_, i) =>
   String.fromCharCode(i + 97)
 );
-const clipboard = document.querySelector(".clipboard")
-
+const clipboard = document.querySelector(".clipboard");
+console.log(clipboard)
 const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase());
 const numbers = Array.from(Array(10).keys());
 const symbols = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
 let passwordList = new Map();
 let lengthPassword, counter;
+// const copyText = document.querySelector(".transparent");
+
+
+
+clipboard.addEventListener("change",  function copyDivToClipboard() {
+  var range = document.createRange();
+  range.selectNode(document.querySelector(".transparent"));
+  window.getSelection().removeAllRanges(); // clear current selection
+  window.getSelection().addRange(range); // to select text
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();// to deselect
+})
+
+
+
+
+
+
 
 if (isElementNotEqualToNull(footer)) {
   function createDate() {
